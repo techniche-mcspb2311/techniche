@@ -9,7 +9,7 @@ export default function Home() {
             <Typography variant="h1" gutterBottom>
                 h1. Heading
             </Typography>
-            <Button>"Check 1 2"</Button>
+            <Button>Check 1 2</Button>
         </Box>
   );
 }
