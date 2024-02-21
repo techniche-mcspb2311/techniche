@@ -1,0 +1,22 @@
+services:
+  sql:
+    image: postgres:latest
+    # expose:
+    #   - "5432"
+    ports:
+      - "5432:5432"
+    restart: always
+    environment:
+      POSTGRES_DB: ${DB}
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+    volumes:
+      - ./sql/seed.sql:/docker-entrypoint-initdb.d/seed.sql:ro
+
+  server:
+    build: .
+    ports:
+      - "${PORT}:${PORT}"
+    restart: always
+    environment:
+      PORT: ${PORT}
