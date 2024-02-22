@@ -35,3 +35,32 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 UI components. You can view the UI components it provides for us out-of-the-box in the
 [components library](https://mui.com/material-ui/all-components/); to view the code, just click
 "show code" underneath an example to learn how to use the component.
+
+## Getting Started with Docker
+
+[MongoDB](https://www.mongodb.com/) is our database - to start an instance of MongoDB, we can use
+`docker compose`; where it will start and configure it for local development. From a new terminal,
+run the following:
+
+```bash
+docker compose up mongo
+```
+
+After you're done, you can type `Ctrl+C` to stop the database. If you want to wipe it from your
+system, you can run the `down` subcommand:
+
+```bash
+docker compose down
+```
+
+## Generate Inline Documentation
+
+Is the codebase getting a little too big? Try generating some inline documentation, so you can
+search through it quickly in your browser:
+
+```bash
+npm run docs
+```
+
+This will create a folder `./docs/` with a bunch of html in it. Open `docs/index.html` and you'll
+see references to the code in the codebase.

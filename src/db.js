@@ -14,6 +14,7 @@ const conn = new Promise((resolve, reject) => {
     }
 });
 
+/** Get the singleton MongoDB connection */
 export default async function getDb() {
     try {
         const client = await conn;
