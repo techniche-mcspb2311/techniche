@@ -1,17 +1,13 @@
 services:
-  sql:
-    image: postgres:latest
-    # expose:
-    #   - "5432"
+  mongo:
+    image: mongo:latest
     ports:
-      - "5432:5432"
+      - "27017:27017"
     restart: always
     environment:
-      POSTGRES_DB: ${DB}
-      POSTGRES_USER: ${DB_USER}
-      POSTGRES_PASSWORD: ${DB_PASSWORD}
-    volumes:
-      - ./sql/seed.sql:/docker-entrypoint-initdb.d/seed.sql:ro
+      MONGO_INITDB_DATABASE: ${DB}
+      MONGO_INITDB_ROOT_USERNAME: ${DB_USER}
+      MONGO_INITDB_ROOT_PASSWORD: ${DB_PASSWORD}
 
   server:
     build: .
