@@ -6,6 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "docs": "npx esdoc",
     "lint": "next lint"
   },
   "dependencies": {
@@ -15,12 +16,16 @@
     "@fontsource/roboto": "^5.0.8",
     "@monaco-editor/react": "^4.6.0",
     "@mui/material-nextjs": "^5.15.9",
+    "mongodb": "^6.3.0",
     "next": "14.1.0",
     "react": "^18",
     "react-dom": "^18"
   },
   "devDependencies": {
     "autoprefixer": "^10.0.1",
+    "esdoc": "^1.1.0",
+    "esdoc-jsx-plugin": "^1.0.0",
+    "esdoc-standard-plugin": "^1.0.0",
     "eslint": "^8",
     "eslint-config-next": "14.1.0",
     "postcss": "^8",
