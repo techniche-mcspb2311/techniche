@@ -15,7 +15,7 @@ function AuthButton() {
         console.log('session: ', session);
         return (
             <Link href="/profile" passHref>
-                <Button>Profile</Button>
+                <Button variant="contained">Profile</Button>
             </Link>
         );
     }
