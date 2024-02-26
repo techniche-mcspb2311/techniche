@@ -37,6 +37,10 @@ export const authOptions = {
                 if (!foundUser) return false;
             }
             return true;
+        },
+        async session({ session, token, user }) {
+            session.user = user;
+            return session;
         }
     },
     pages: {
