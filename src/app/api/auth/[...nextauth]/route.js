@@ -21,30 +21,11 @@ export const authOptions = {
                 },
             },
             from: process.env.EMAIL_FROM
-            // credentials: {
-            //     username: { label: 'Username' },
-            //     password: { label: 'Password', type: 'password' }
-            // },
-            // async authorize(credentials) {
-            //     const authResponse = await fetch("http://localhost:3000/api/users/login", {
-            //         method: "POST",
-            //         headers: {
-            //             "Content-Type": "application/json",
-            //         },
-            //         body: JSON.stringify(credentials),
-            //     });
-
-            //     if (!authResponse.ok) {
-            //         return null;
-            //     }
-
-            //     const user = await authResponse.json();
-
-            //     return user;
-            // },
         }),
     ],
     callbacks: {
+        // we can override specific behaviors that next-auth uses:
+        // https://authjs.dev/guides/basics/callbacks
         async signIn({ user, account, profile, email, credentials }) {
             if (email && email.verificationRequest) {
                 console.log('verification request', user, account, profile, email, credentials);
@@ -52,12 +33,15 @@ export const authOptions = {
                 const users = db.collection('users');
                 const foundUser = await users.findOne({ email: user.email });
                 console.log('user', foundUser);
+                // don't let people register when logging in
                 if (!foundUser) return false;
             }
             return true;
         }
     },
     pages: {
+        // lets us override the default pages:
+        // https://authjs.dev/guides/basics/pages
         signIn: '/login',
     }
 };
