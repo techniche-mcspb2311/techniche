@@ -2,7 +2,7 @@ import NextAuth from 'next-auth';
 // import CredentialsProvider from "next-auth/providers/credentials";
 import EmailProvider from 'next-auth/providers/email';
 import { MongoDBAdapter } from '@auth/mongodb-adapter';
-import getDb, { conn } from '@/db';
+import { conn, getDb } from '@/db';
 
 export const authOptions = {
     secret: process.env.NEXTAUTH_SECRET,
