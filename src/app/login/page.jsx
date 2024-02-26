@@ -8,7 +8,7 @@ export default async function Login() {
         headers: headers(),
     })
           .then( res => res.json() )
-          .then( csrfTokenObject => csrfTokenObject?.csrfToken );
+          .then( csrfTokenObject => csrfTokenObject && csrfTokenObject.csrfToken );
 
     return (
         <form method="post" action="/api/auth/signin/email">
