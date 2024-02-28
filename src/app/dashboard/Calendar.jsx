@@ -114,7 +114,7 @@ export default function BasicTabs() {
           <div style={listStyle}> free day </div>
         </CustomTabPanel>
         
-        <button style={{ backgroundColor: 'grey', borderRadius: '5px', padding: '1px 5px', marginLeft: '25px'}} 
+        <button style={{ backgroundColor: 'grey', color: 'white', borderRadius: '5px', padding: '1px 5px', marginLeft: '25px'}} 
         onClick={handleOpen}>Add Event</button>
         <Modal
           open={open}
