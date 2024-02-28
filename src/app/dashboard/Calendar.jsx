@@ -5,8 +5,13 @@ import { DateCalendar } from '@mui/x-date-pickers/DateCalendar';
 
 export default function CustomMonthLayout() {
   return (
-    <LocalizationProvider dateAdapter={AdapterDayjs}>
-      <DateCalendar showDaysOutsideCurrentMonth fixedWeekNumber={6} />
-    </LocalizationProvider>
+    <div className='Calendar-Container' style={{ display: 'flex', justifyContent: 'space-around' }}>
+      <div className='Calendar'>
+        <LocalizationProvider dateAdapter={AdapterDayjs}>
+         <DateCalendar showDaysOutsideCurrentMonth fixedWeekNumber={6} />
+        </LocalizationProvider>
+      </div>
+    </div>
   );
 }
+
