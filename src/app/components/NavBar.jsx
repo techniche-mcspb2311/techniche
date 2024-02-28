@@ -1,54 +1,32 @@
-"use client"
+"use client";
 
-import * as React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { signIn, useSession } from 'next-auth/react';
-
-import Box from '@mui/material/Box'
+import Box from '@mui/material/Box';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
-import Divider from '@mui/material/Divider';
-import Typography from '@mui/material/Typography';
-import MenuItem from '@mui/material/MenuItem';
 import Drawer from '@mui/material/Drawer';
-import MenuIcon from '@mui/material/Menu';
-
+import Typography from '@mui/material/Typography';
+import MenuIcon from '@mui/icons-material/Menu';
 import Link from 'next/link';
 
-function AuthButton() {
-    // hook into the current session:
-    // https://next-auth.js.org/getting-started/example#frontend---add-react-hook
-    const { data: session } = useSession();
-
+function AuthButton({ session }) {
     if (session) {
-        console.log('session: ', session);
         return (
             <Link href="/dashboard" passHref>
-              <Button variant="contained">Dashboard</Button>
+                <Button variant="contained">Dashboard</Button>
             </Link>
         );
-    }
-    return (
-        <Box
-            sx={{
-                display: { xs: 'none', md: 'flex' },
-                gap: 0.5,
-                alignItems: 'center'
-            }}
-        >
-            // using the signIn function:
-            // https://next-auth.js.org/getting-started/example#frontend---add-react-hook
-            <Button
-                color="primary"
-                variant="contained"
-                onClick={() => signIn()}
-            >
+    } else {
+        return (
+            <Button color="primary" variant="contained" onClick={() => signIn()}>
                 Login
             </Button>
-        </Box>
-    );
+        );
+    }
 }
 
 function MovingNavBar({ toggleDrawer }) {
@@ -68,7 +46,8 @@ function MovingNavBar({ toggleDrawer }) {
 }
 
 function NavBar({ mode, toggleColorMode }) {
-    const [open, setOpen] = React.useState(false);
+    const [open, setOpen] = useState(false);
+    const { data: session } = useSession();
 
     const toggleDrawer = (newOpen) => () => {
         setOpen(newOpen);
@@ -76,15 +55,7 @@ function NavBar({ mode, toggleColorMode }) {
 
     return (
         <div>
-            <AppBar
-                position="fixed"
-                sx={{
-                    boxShadow: 0,
-                    bgcolor: 'transparent',
-                    backgroundImage: 'none',
-                    mt: 2
-                }}
-            >
+            <AppBar position="fixed" sx={{ boxShadow: 0, bgcolor: 'transparent', mt: 2 }}>
                 <Container maxWidth="lg">
                     <Toolbar
                         variant="regular"
@@ -92,7 +63,7 @@ function NavBar({ mode, toggleColorMode }) {
                             display: 'flex',
                             alignItems: 'center',
                             justifyContent: 'space-between',
-                            fexShrink: 0,
+                            flexShrink: 0,
                             borderRadius: '999px',
                             bgcolor:
                                 theme.palette.mode === 'light'
@@ -123,25 +94,19 @@ function NavBar({ mode, toggleColorMode }) {
                         >
                             Techniche
                         </Typography>
-                        <AuthButton />
+                        <AuthButton session={session} />
                         <MovingNavBar toggleDrawer={toggleDrawer} />
                         <Drawer anchor="right" open={open} onClose={toggleDrawer(false)}>
-                            <Box
-                                sx={{
-                                    minWidth: '60dvw',
-                                    p: 2,
-                                    backgroundColor: 'background.paper',
-                                    flexGrow: 1
-                                }}
-                            >
+                            <Box sx={{ minWidth: '60dvw', p: 2, backgroundColor: 'background.paper', flexGrow: 1 }}>
                                 <Box
                                     sx={{
                                         display: 'flex',
                                         flexDirection: 'column',
                                         alignItems: 'end',
-                                        flexGrow: 1,
+                                        flexGrow: 1
                                     }}
                                 >
+                                    {/* Drawer content */}
                                 </Box>
                             </Box>
                         </Drawer>
@@ -152,7 +117,7 @@ function NavBar({ mode, toggleColorMode }) {
     );
 }
 
-NavBar.prototype = {
+NavBar.propTypes = {
     mode: PropTypes.oneOf(['dark', 'light']).isRequired,
     toggleColorMode: PropTypes.func.isRequired
 };
