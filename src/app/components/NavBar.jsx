@@ -152,4 +152,9 @@ function NavBar({ mode, toggleColorMode }) {
     );
 }
 
+NavBar.prototype = {
+    mode: PropTypes.oneOf(['dark', 'light']).isRequired,
+    toggleColorMode: PropTypes.func.isRequired
+};
+
 export default NavBar;
