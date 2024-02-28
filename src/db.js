@@ -30,11 +30,12 @@
 
 async function seed(db) {
     const users = db.collection('users');
-
+    console.log('seeding')
     if (process.env.ADMIN_EMAIL) {
+        console.log('admin email', process.env.ADMIN_EMAIL);
         const adminExists = await users.findOne({ email: process.env.ADMIN_EMAIL });
         if (!adminExists) {
-            await users.insert({ email: process.env.ADMIN_EMAIL, isAdmin: true });
+            await users.insertOne({ email: process.env.ADMIN_EMAIL, isAdmin: true });
             console.log('inserted email account');
         } else if (!adminExists.isAdmin) {
             await users.updateOne({
@@ -86,6 +87,7 @@ export async function getDb() {
     try {
         const client = await clientPromise;
         const db = client.db(process.env.DB);
+        await seed(db);
         return db;
     } catch(e) {
         console.error('Couldn\'t get Mongo Database', e);
