@@ -52,14 +52,14 @@ function a11yProps(index) {
   };
 }
 
+
+
 export default function BasicTabs() {
   const [value, setValue] = React.useState(0);
   const handleChange = (event, newValue) => setValue(newValue);
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
-  
-  
 
   return (
     <div>
@@ -103,6 +103,9 @@ export default function BasicTabs() {
           Free Day
         </CustomTabPanel>
       </Box>
+
+
+
       <button style={{ backgroundColor: 'lightblue', borderRadius: '5px', padding: '2px 5px' }} 
       onClick={handleOpen}>Create Event</button>
       <Modal
@@ -112,6 +115,7 @@ export default function BasicTabs() {
         aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
+          <input type="text" placeholder='Write Subject Here...' style={{ width: '100%', textAlign: 'center', margin: '0 auto', display: 'block' }} />
           <CalendarTwo/>
         </Box>
       </Modal>
