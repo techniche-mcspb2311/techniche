@@ -6,6 +6,7 @@ import Box from '@mui/material/Box';
 import CssBaseline from '@mui/material/CssBaseline';
 import Container from '@mui/material/Container';
 import Candidates from './Candidates';
+import AvailableRooms from './availableRooms';
 
 export default function Dashboard() {
     const { data: session } = useSession({
@@ -26,7 +27,7 @@ export default function Dashboard() {
           {/* left-most column component */}
           <Box sx={{ width: '25%', position:'relative', bgcolor: 'white', height: '90vh', border: 'thin blue solid' }}>
             <Box sx={{ position:'relative', bgcolor: 'white', height: '45vh', border: 'thin blue solid' }} />
-            <Box sx={{ position:'relative', bgcolor: 'white', height: '45vh', border: 'thin blue solid' }} />
+            <AvailableRooms sx={{ position:'relative', bgcolor: 'white', height: '45vh', border: 'thin blue solid' }} />
           </Box>
           {/* middle column component */}
           <Box sx={{ width: '55%', position:'relative', bgcolor: 'white', height: '90vh', border: 'thin blue solid' }}>
