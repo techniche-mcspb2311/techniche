@@ -20,6 +20,15 @@ const style = {
   p: 4,
 };
 
+const listStyle = {
+  backgroundColor: 'white',
+  padding: '5px 10px',
+  borderRadius: '20px',
+  margin: '10px 0',
+  boxShadow: '2px 3px 10px 0 #000000',
+  font: 'bold 15px/30px Arial, sans-serif',
+}
+
 function CustomTabPanel(props) {
   const { children, value, index, ...other } = props;
 
@@ -52,8 +61,6 @@ function a11yProps(index) {
   };
 }
 
-
-
 export default function BasicTabs() {
   const [value, setValue] = React.useState(0);
   const handleChange = (event, newValue) => setValue(newValue);
@@ -63,62 +70,67 @@ export default function BasicTabs() {
 
   return (
     <div>
-      <h1 style={{ textAlign: 'center' }}>Calendar:</h1>
-      <Box sx={{ width: '100%', height: '30vh'}}>
-        <Box sx={{ borderBottom: 1, borderColor: 'divider', backgroundColor: '#AEB1C1' }}>
+      <h1 style={{ textAlign: 'center', fontSize: '30px', backgroundColor: '#21282D', color: 'white' }}>Calendar:</h1>
+      <Box className="calendarBox" sx={{ width: '100%', height: '30vh', backgroundColor: '#C2BBAB'}}>
+        <Box sx={{ borderBottom: 1, borderColor: 'divider', backgroundColor: '#2A343B'}}>
           <Tabs value={value} onChange={handleChange} aria-label="basic tabs example" >
-            <Tab label="Sunday" {...a11yProps(0)} />
-            <Tab label="Monday" {...a11yProps(1)} />
-            <Tab label="Tuesday" {...a11yProps(2)} />
-            <Tab label="Wednesday" {...a11yProps(3)} />
-            <Tab label="Thursday" {...a11yProps(4)} />
-            <Tab label="Friday" {...a11yProps(5)} />
-            <Tab label="Saturday" {...a11yProps(6)} />
+            <Tab sx={{ color: 'white'}} label="Sunday" {...a11yProps(0)} />
+            <Tab sx={{ color: 'white'}} label="Monday" {...a11yProps(1)} />
+            <Tab sx={{ color: 'white'}} label="Tuesday" {...a11yProps(2)} />
+            <Tab sx={{ color: 'white'}} label="Wednesday" {...a11yProps(3)} />
+            <Tab sx={{ color: 'white'}} label="Thursday" {...a11yProps(4)} />
+            <Tab sx={{ color: 'white'}} label="Friday" {...a11yProps(5)} />
+            <Tab sx={{ color: 'white'}} label="Saturday" {...a11yProps(6)} />
           </Tabs>
         </Box>
-        
+  
         <CustomTabPanel value={value} index={0}>
-          Free Day
+          <div style={listStyle}> free day </div>
         </CustomTabPanel>
         <CustomTabPanel value={value} index={1}>
-          <li>Meeting</li>
-          <li>Phone Call</li>
-          <li>Interview</li>
-          <li>Interview</li>
+          <div style={listStyle}> work </div>
+          <div style={listStyle}> meeting </div>
+          <div style={listStyle}> interview </div>
         </CustomTabPanel>
         <CustomTabPanel value={value} index={2}>
-          <li>Networking event</li>
+          <div style={listStyle}> gym </div>
+          <div style={listStyle}> call </div>
+          <div style={listStyle}> interview </div>
         </CustomTabPanel>
         <CustomTabPanel value={value} index={3}>
-          <li>hump day</li>
+          <div style={listStyle}> interview </div>
+          <div style={listStyle}> screening </div>
+          <div style={listStyle}> call </div>
         </CustomTabPanel>
         <CustomTabPanel value={value} index={4}>
-          <li>Hump day over with</li>
-          <li>Thirsty Thursday</li> 
+          <div style={listStyle}> network event </div>
+          <div style={listStyle}> interview </div>
         </CustomTabPanel>
         <CustomTabPanel value={value} index={5}>
-          <li>TGIF</li>
+          <div style={listStyle}> work </div>
+          <div style={listStyle}> meeting </div>
         </CustomTabPanel>
         <CustomTabPanel value={value} index={6}>
-          Free Day
+          <div style={listStyle}> free day </div>
         </CustomTabPanel>
+        
+        <button style={{ backgroundColor: 'grey', borderRadius: '5px', padding: '1px 5px', marginLeft: '25px'}} 
+        onClick={handleOpen}>Add Event</button>
+        <Modal
+          open={open}
+          onClose={handleClose}
+          aria-labelledby="modal-modal-title"
+          aria-describedby="modal-modal-description"
+        >
+          <Box sx={style}>
+            <input type="text" placeholder='Write Subject Here...' style={{ width: '100%', textAlign: 'center', margin: '0 auto', display: 'block' }} />
+            <CalendarTwo/>
+          </Box>
+        </Modal>
       </Box>
 
 
 
-      <button style={{ backgroundColor: 'lightblue', borderRadius: '5px', padding: '2px 5px' }} 
-      onClick={handleOpen}>Create Event</button>
-      <Modal
-        open={open}
-        onClose={handleClose}
-        aria-labelledby="modal-modal-title"
-        aria-describedby="modal-modal-description"
-      >
-        <Box sx={style}>
-          <input type="text" placeholder='Write Subject Here...' style={{ width: '100%', textAlign: 'center', margin: '0 auto', display: 'block' }} />
-          <CalendarTwo/>
-        </Box>
-      </Modal>
     </div>
   );
 }
