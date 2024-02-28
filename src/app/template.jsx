@@ -6,7 +6,7 @@ export default function Template({ children }) {
     return (
         <Box>
             <NavBar />
-            <Container maxWidth="md">
+            <Container maxWidth="100%">
                 {children}
             </Container>
         </Box>

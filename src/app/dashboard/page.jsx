@@ -3,6 +3,9 @@
 import { useSession } from 'next-auth/react';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
+import CssBaseline from '@mui/material/CssBaseline';
+import Container from '@mui/material/Container';
+import Candidates from './Candidates';
 
 export default function Dashboard() {
     const { data: session } = useSession({
@@ -11,11 +14,30 @@ export default function Dashboard() {
     });
 
     return (
-        <Box>
-          <Typography>Dashboard</Typography>
-          <Box>
-            {`Currently logged in as: ${session && session.user.email}`}
+        // <Box>
+        //   <Typography>Dashboard</Typography>
+        //   <Box>
+        //     {`Currently logged in as: ${session && session.user.email}`}
+        //   </Box>
+        // </Box>
+      <>
+        <CssBaseline />
+        <Container maxWidth="100vw" sx={{ display: 'flex' }}>
+          {/* left-most column component */}
+          <Box sx={{ width: '25%', position:'relative', bgcolor: 'white', height: '90vh', border: 'thin blue solid' }}>
+            <Box sx={{ position:'relative', bgcolor: 'white', height: '45vh', border: 'thin blue solid' }} />
+            <Box sx={{ position:'relative', bgcolor: 'white', height: '45vh', border: 'thin blue solid' }} />
           </Box>
-        </Box>
+          {/* middle column component */}
+          <Box sx={{ width: '55%', position:'relative', bgcolor: 'white', height: '90vh', border: 'thin blue solid' }}>
+            <Box sx={{ position:'relative', bgcolor: 'white', height: '45vh', border: 'thin blue solid' }} />
+            <Box sx={{ position:'relative', bgcolor: 'white', height: '45vh', border: 'thin blue solid' }} />
+            </Box>
+          {/* right-most column component */}
+          <Box sx={{ width: '25%', position:'relative', bgcolor: 'white', height: '90vh', border: 'thin blue solid' }}>
+            <Box sx={{ position:'relative', bgcolor: 'white', height: '90vh', border: 'thin blue solid' }} />
+          </Box>
+        </Container>
+      </>
     );
 }
