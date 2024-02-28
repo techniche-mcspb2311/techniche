@@ -46,8 +46,8 @@ export default function BasicTabs() {
   };
 
   return (
-    <Box sx={{ width: '100%', height: '30vh' }}>
-      <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
+    <Box sx={{ width: '100%', height: '30vh'}}>
+      <Box sx={{ borderBottom: 1, borderColor: 'divider', backgroundColor: '#AEB1C1' }}>
         <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
           <Tab label="Sunday" {...a11yProps(0)} />
           <Tab label="Monday" {...a11yProps(1)} />
