@@ -4,13 +4,29 @@ import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
+// here
+import Button from '@mui/material/Button';
+import Modal from '@mui/material/Modal';
+
+const style = {
+  position: 'absolute',
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)',
+  width: 400,
+  bgcolor: 'background.paper',
+  border: '2px solid #000',
+  boxShadow: 24,
+  p: 4,
+};
+// that ^
+
 
 function CustomTabPanel(props) {
   const { children, value, index, ...other } = props;
 
   return (
-    <div
-      role="tabpanel"
+    <div role="tabpanel"
       hidden={value !== index}
       id={`simple-tabpanel-${index}`}
       aria-labelledby={`simple-tab-${index}`}
@@ -40,10 +56,13 @@ function a11yProps(index) {
 
 export default function BasicTabs() {
   const [value, setValue] = React.useState(0);
-
-  const handleChange = (event, newValue) => {
-    setValue(newValue);
-  };
+  const handleChange = (event, newValue) => setValue(newValue);
+  // here
+  const [open, setOpen] = React.useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+  
+  
 
   return (
     <div>
@@ -87,10 +106,24 @@ export default function BasicTabs() {
           Free Day
         </CustomTabPanel>
       </Box>
-      <button 
-        style={{ backgroundColor: 'lightblue', borderRadius: '5px', padding: '2px 5px' }} 
-        onClick={() => alert('Create Event')}
-      >Create Event</button>
+      <button style={{ backgroundColor: 'lightblue', borderRadius: '5px', padding: '2px 5px' }} 
+      // here
+      onClick={handleOpen}>Create Event</button>
+      <Modal
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Box sx={style}>
+          <Typography id="modal-modal-title" variant="h6" component="h2">
+            Pick a day and time:
+          </Typography>
+          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+            selection will be here...
+          </Typography>
+        </Box>
+      </Modal>
     </div>
   );
 }
