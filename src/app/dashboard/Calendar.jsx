@@ -4,9 +4,9 @@ import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
-// here
 import Button from '@mui/material/Button';
 import Modal from '@mui/material/Modal';
+import CalendarTwo from './Calendar-2';
 
 const style = {
   position: 'absolute',
@@ -19,8 +19,6 @@ const style = {
   boxShadow: 24,
   p: 4,
 };
-// that ^
-
 
 function CustomTabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -57,7 +55,6 @@ function a11yProps(index) {
 export default function BasicTabs() {
   const [value, setValue] = React.useState(0);
   const handleChange = (event, newValue) => setValue(newValue);
-  // here
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -107,7 +104,6 @@ export default function BasicTabs() {
         </CustomTabPanel>
       </Box>
       <button style={{ backgroundColor: 'lightblue', borderRadius: '5px', padding: '2px 5px' }} 
-      // here
       onClick={handleOpen}>Create Event</button>
       <Modal
         open={open}
@@ -116,12 +112,7 @@ export default function BasicTabs() {
         aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
-          <Typography id="modal-modal-title" variant="h6" component="h2">
-            Pick a day and time:
-          </Typography>
-          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-            selection will be here...
-          </Typography>
+          <CalendarTwo/>
         </Box>
       </Modal>
     </div>
