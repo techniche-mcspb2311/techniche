@@ -89,7 +89,7 @@ export default function BasicTabs() {
       </Box>
       <button 
         style={{ backgroundColor: 'lightblue', borderRadius: '5px', padding: '2px 5px' }} 
-        onClick={() => console.log('click')}
+        onClick={() => alert('Create Event')}
       >Create Event</button>
     </div>
   );
