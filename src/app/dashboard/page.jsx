@@ -3,6 +3,8 @@
 import { useSession } from 'next-auth/react';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
+import EditAccount from './EditAccount';
+
 
 export default function Dashboard() {
     const { data: session } = useSession({
@@ -12,6 +14,7 @@ export default function Dashboard() {
 
     return (
         <Box>
+          <EditAccount />
           <Typography>Dashboard</Typography>
           <Box>
             {`Currently logged in as: ${session && session.user.email}`}
