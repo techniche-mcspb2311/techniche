@@ -30,8 +30,9 @@
 
 async function seed(db) {
     const users = db.collection('users');
-
+    console.log('seeding')
     if (process.env.ADMIN_EMAIL) {
+        console.log('admin email', process.env.ADMIN_EMAIL);
         const adminExists = await users.findOne({ email: process.env.ADMIN_EMAIL });
         if (!adminExists) {
             await users.insertOne({ email: process.env.ADMIN_EMAIL, isAdmin: true });
