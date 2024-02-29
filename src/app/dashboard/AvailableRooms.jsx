@@ -1,4 +1,23 @@
+"use client";
 import React, { useState } from 'react';
+import Editor from '@monaco-editor/react';
+import Box from '@mui/material/Box';
+import Typography from '@mui/material/Typography';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { set } from 'zod';
+
+function Challenge() {
+    return (
+        <Box>
+            <Typography variant="h2" gutterBottom>Coding Challenge</Typography>
+            <Box sx={{ width: '100%', maxWidth: '80em' }}>
+                <Editor height="90vh" defaultLanguage="javascript" />
+            </Box>
+        </Box>
+    );
+}
+
+
 
 const mockData = [
   {
@@ -37,16 +56,19 @@ const RoomModal = ({ room, onJoinRoomClick, onDeleteClick, onClose }) => (
 const AvailableRooms = () => {
   const [selectedRoom, setSelectedRoom] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [showChallenge, setShowChallenge] = useState(false);
 
   const handleRoomClick = (room) => {
     setSelectedRoom(room);
     setIsModalOpen(true);
+    setShowChallenge(false);
   };
 
   const handleJoinRoom = (room) => {
     if (room) {
-      window.open(room.link, '_blank');
-    }
+      setShowChallenge(true);
+      window.open('/challenge', '_blank');
+    } 
   };
 
   const handleDeleteRoom = () => {
@@ -55,33 +77,42 @@ const AvailableRooms = () => {
       console.log('Room deleted:', selectedRoom);
       setSelectedRoom(null);
       setIsModalOpen(false);
+      setShowChallenge(false);
     }
   };
 
   const handleCloseModal = () => {
     setSelectedRoom(null);
     setIsModalOpen(false);
+    setShowChallenge(false);
   };
 
   return (
-    <div>
-      <div className="room-list">
-        {mockData.map((room) => (
-          <div className="room" key={room.id} onClick={() => handleRoomClick(room)}>
-            {`Room ${room.id}`}
-          </div>
-        ))}
-      </div>
+    <BrowserRouter>
+    
+      <div>
+        <div className="room-list">
+          {mockData.map((room) => (
+            <div className="room" key={room.id} onClick={() => handleRoomClick(room)}>
+              {`Room ${room.id}`}
+            </div>
+          ))}
+        </div>
 
-      {isModalOpen && selectedRoom && (
-        <RoomModal
-          room={selectedRoom}
-          onJoinRoomClick={handleJoinRoom}
-          onDeleteClick={handleDeleteRoom}
-          onClose={handleCloseModal}
-        />
-      )}
-    </div>
+        {isModalOpen && selectedRoom && !showChallenge && (
+          <RoomModal
+            room={selectedRoom}
+            onJoinRoomClick={handleJoinRoom}
+            onDeleteClick={handleDeleteRoom}
+            onClose={handleCloseModal}
+          />
+        )}
+
+      </div>
+        <Routes>
+          <Route path="/challenge" element={<Challenge />} />
+        </Routes>
+    </BrowserRouter>
   );
 };
 
