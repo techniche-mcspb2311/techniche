@@ -1,3 +1,33 @@
+// import { MongoClient, ServerApiVersion } from 'mongodb';
+
+// let conn;
+
+// export const conn = new Promise((resolve, reject) => {
+//     try {
+//         console.log('MONGODB_URI', process.env.MONGODB_URI);
+//         const client = new MongoClient(process.env.MONGODB_URI, {
+//             serverApi: ServerApiVersion.v1
+//         });
+
+//         resolve(client);
+//     } catch(e) {
+//         console.error('Couldn\'t connect to Mongo with URI', process.env.MONGODB_URI, e);
+//         reject(e);
+//     }
+// }).then(async client => {
+//     await client.connect();
+//     return client;
+// });
+
+// export const db = conn.then(async client => {
+//     const db = client.db(process.env.DB);
+
+//     await seed(db);
+
+//     return db;
+// });
+
+
 async function seed(db) {
     const users = db.collection('users');
     console.log('seeding')
