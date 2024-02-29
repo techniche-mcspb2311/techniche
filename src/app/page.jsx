@@ -5,7 +5,7 @@ import Button from '@mui/material/Button';
 
 export default function Home() {
     return (
-        <Box sx={{ width: '100%', maxWidth: 500, marginTop: '64px' }}>
+        <Box sx={{ width: '100%', maxWidth: 500 }}>
             <Typography variant="h1" gutterBottom>
                 h1. Heading
             </Typography>

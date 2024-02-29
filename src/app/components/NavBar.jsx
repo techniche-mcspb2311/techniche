@@ -54,9 +54,9 @@ function NavBar({ mode, toggleColorMode }) {
     };
 
     return (
-        <div>
+        <div style={{ paddingTop: '90px' }}>
             <AppBar position="fixed" sx={{ boxShadow: 0, bgcolor: 'transparent', mt: 2 }}>
-                <Container maxWidth="lg">
+                <Container maxWidth="100%">
                     <Toolbar
                         variant="regular"
                         sx={(theme) => ({
