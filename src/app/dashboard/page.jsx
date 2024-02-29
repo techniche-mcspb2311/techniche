@@ -3,9 +3,13 @@
 import { useSession } from 'next-auth/react';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
+import EditAccount from './EditAccount';
 import CssBaseline from '@mui/material/CssBaseline';
 import Container from '@mui/material/Container';
+import AvailableRooms from './availableRooms';
+import Calendar from './Calendar';
 import Candidates from './CandidateList/Candidates';
+
 
 export default function Dashboard() {
     const { data: session } = useSession({
@@ -26,11 +30,13 @@ export default function Dashboard() {
           {/* left-most column component */}
           <Box sx={{ width: '25%', position:'relative', bgcolor: 'white', height: '90vh', border: 'thin blue solid' }}>
             <Box sx={{ position:'relative', bgcolor: 'white', height: '45vh', border: 'thin blue solid' }} />
-            <Box sx={{ position:'relative', bgcolor: 'white', height: '45vh', border: 'thin blue solid' }} />
+            <AvailableRooms sx={{ position:'relative', bgcolor: 'white', height: '45vh', border: 'thin blue solid' }} />
           </Box>
           {/* middle column component */}
           <Box sx={{ width: '55%', position:'relative', bgcolor: 'white', height: '90vh', border: 'thin blue solid' }}>
-            <Box sx={{ position:'relative', bgcolor: 'white', height: '45vh', border: 'thin blue solid' }} />
+            <Box sx={{ position:'relative', bgcolor: 'white', height: '45vh', border: 'thin blue solid' }}>
+              <Calendar />
+            </Box>
             <Box sx={{ position:'relative', bgcolor: 'white', height: '45vh', border: 'thin blue solid' }}>
               <Candidates />
               </Box>
@@ -40,6 +46,7 @@ export default function Dashboard() {
             <Box sx={{ position:'relative', bgcolor: 'white', height: '90vh', border: 'thin blue solid' }} />
           </Box>
         </Container>
+        <EditAccount userEmail={session && session.user.email} />
       </>
     );
 }
