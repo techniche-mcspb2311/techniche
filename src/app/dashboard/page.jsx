@@ -34,8 +34,9 @@ export default function Dashboard() {
           </Box>
           {/* middle column component */}
           <Box sx={{ width: '55%', position:'relative', bgcolor: 'white', height: '90vh', border: 'thin blue solid' }}>
-            <Calendar />
-            <Box sx={{ position:'relative', bgcolor: 'white', height: '45vh', border: 'thin blue solid' }} />
+            <Box sx={{ position:'relative', bgcolor: 'white', height: '45vh', border: 'thin blue solid' }}>
+              <Calendar />
+            </Box>
             <Box sx={{ position:'relative', bgcolor: 'white', height: '45vh', border: 'thin blue solid' }}>
               <Candidates />
               </Box>
