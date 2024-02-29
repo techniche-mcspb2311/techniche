@@ -14,7 +14,7 @@ export default function Dashboard() {
 
     return (
         <Box>
-          <EditAccount />
+          <EditAccount userEmail={session && session.user.email} />
           <Typography>Dashboard</Typography>
           <Box>
             {`Currently logged in as: ${session && session.user.email}`}
