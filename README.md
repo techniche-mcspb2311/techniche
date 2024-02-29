@@ -38,6 +38,17 @@ UI components. You can view the UI components it provides for us out-of-the-box 
 
 ## Getting Started with Docker
 
+Before starting `docker compose`, you'll have to tell it about the environment variables
+it expects to be present - you'll have to manually load your `.env.local` file:
+
+```bash
+set -a; source .env.local; set +a
+```
+
+This loads the environment variables, and allows them to be passed to child processes.
+
+### Getting MongoDB
+
 [MongoDB](https://www.mongodb.com/) is our database - to start an instance of MongoDB, we can use
 `docker compose`; where it will start and configure it for local development. From a new terminal,
 run the following:
@@ -45,6 +56,8 @@ run the following:
 ```bash
 docker compose up mongo
 ```
+
+> Note: __DON'T INSTALL MONGODB - DOCKER DOES IT FOR YOU__
 
 After you're done, you can type `Ctrl+C` to stop the database. If you want to wipe it from your
 system, you can run the `down` subcommand:
