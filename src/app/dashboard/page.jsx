@@ -3,6 +3,7 @@
 import { useSession } from 'next-auth/react';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
+import EditAccount from './EditAccount';
 import CssBaseline from '@mui/material/CssBaseline';
 import Container from '@mui/material/Container';
 import Candidates from './Candidates';
@@ -38,6 +39,7 @@ export default function Dashboard() {
             <Box sx={{ position:'relative', bgcolor: 'white', height: '90vh', border: 'thin blue solid' }} />
           </Box>
         </Container>
+        <EditAccount userEmail={session && session.user.email} />
       </>
     );
 }
