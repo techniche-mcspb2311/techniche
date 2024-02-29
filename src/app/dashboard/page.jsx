@@ -4,7 +4,6 @@ import { useSession } from 'next-auth/react';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import EditAccount from './EditAccount';
-
 import CssBaseline from '@mui/material/CssBaseline';
 import Container from '@mui/material/Container';
 import Candidates from './Candidates';
