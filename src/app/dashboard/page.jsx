@@ -6,7 +6,7 @@ import Box from '@mui/material/Box';
 import EditAccount from './EditAccount';
 import CssBaseline from '@mui/material/CssBaseline';
 import Container from '@mui/material/Container';
-import AvailableRooms from './availableRooms';
+import AvailableRooms from './AvailableRooms';
 import Calendar from './Calendar';
 import Candidates from './CandidateList/Candidates';
 
