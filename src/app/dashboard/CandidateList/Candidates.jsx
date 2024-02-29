@@ -53,16 +53,15 @@ const Candidates = () => {
   const [sortedCandidates, setSortedCandidates] = useState(candidates);
 
   const handleOpen = () => setViewAll(true);
-  const handleClose = () => setViewAll(false);
-
-  useEffect(() => {
-    console.log(sortedCandidates);
-  }, [sortedCandidates]);
+  const handleClose = () => {
+    setViewAll(false)
+    setProfile(null);
+  };
 
   function candidateProfile(index) {
-    console.log(index)
     setViewAll(false);
-    setProfile(index);
+    const originalIndex = sortedCandidates.findIndex(candidate => candidate.id === index);
+    setProfile(originalIndex);
   }
 
   const modalStyle = {
@@ -98,7 +97,7 @@ const Candidates = () => {
             <Typography id="modal-modal-title" variant="h6" component="h2">
               Candidates
             </Typography>
-            {candidates.map((candidate, index) => {
+            {sortedCandidates.map((candidate, index) => {
               if (candidate.recruiter === 'theUser') {
                 return (
                   <ListItemButton key={index} onClick={() => candidateProfile(candidate.id)} sx={{ bgcolor: '#6ccc81', outline: 'thin grey dotted', borderRadius: '25px' }}>
@@ -118,11 +117,11 @@ const Candidates = () => {
       )}
       {/* Profile Modal ///////////////////////////////////////////////////// */}
       {profile && (
-        <ProfileModal profile={profile} setProfile={setProfile} candidates={candidates}/>
+        <ProfileModal profile={profile} setProfile={setProfile} candidates={candidates} sortedCandidates={sortedCandidates} setViewAll={setViewAll}/>
       )}
       {/* Candidate List //////////////////////////////////////////////////// */}
       <Box sx={{ position:'relative', overflow:'hidden', outline:'grey thin dotted', bgcolor:'white', height:'35vh', width:'40vw', borderRadius:'30px', top:'`vh', left:'5vw' }}>
-        {candidates.map((candidate, index) => {
+        {sortedCandidates.map((candidate, index) => {
           if(candidate.recruiter === 'theUser') {
             return (
               <ListItemButton key={index} onClick={() => candidateProfile(candidate.id)} sx={{ bgcolor: '#6ccc81', outline:'thin grey dotted', borderRadius:'25px' }}>
