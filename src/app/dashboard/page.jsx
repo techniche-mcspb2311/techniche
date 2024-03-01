@@ -9,6 +9,7 @@ import Container from '@mui/material/Container';
 import AvailableRooms from './AvailableRooms';
 import Calendar from './Calendar';
 import Candidates from './CandidateList/Candidates';
+import Notifications from './Notifications/Notifications';
 
 
 export default function Dashboard() {
@@ -28,22 +29,22 @@ export default function Dashboard() {
         <CssBaseline />
         <Container maxWidth="100vw" sx={{ display: 'flex' }}>
           {/* left-most column component */}
-          <Box sx={{ width: '25%', position:'relative', bgcolor: 'white', height: '90vh', border: 'thin blue solid' }}>
-            <Box sx={{ position:'relative', bgcolor: 'white', height: '45vh', border: 'thin blue solid' }} />
-            <AvailableRooms sx={{ position:'relative', bgcolor: 'white', height: '45vh', border: 'thin blue solid' }} />
+          <Box sx={{ width: '25%', position:'relative', bgcolor: 'white', height: '90vh', border: 'thin grey dotted' }}>
+            <Box sx={{ position:'relative', bgcolor: 'white', height: '45vh', border: 'thin grey dotted' }} />
+            <AvailableRooms sx={{ position:'relative', bgcolor: 'white', height: '45vh', border: 'thin grey dotted' }} />
           </Box>
           {/* middle column component */}
-          <Box sx={{ width: '55%', position:'relative', bgcolor: 'white', height: '90vh', border: 'thin blue solid' }}>
-            <Box sx={{ position:'relative', bgcolor: 'white', height: '45vh', border: 'thin blue solid' }}>
+          <Box sx={{ width: '55%', position:'relative', bgcolor: 'white', height: '90vh', border: 'thin grey dotted' }}>
+            <Box sx={{ position:'relative', bgcolor: 'white', height: '45vh', border: 'thin grey dotted' }}>
               <Calendar />
             </Box>
-            <Box sx={{ position:'relative', bgcolor: 'white', height: '45vh', border: 'thin blue solid' }}>
+            <Box sx={{ position:'relative', bgcolor: 'white', height: '45vh', border: 'thin grey dotted' }}>
               <Candidates />
               </Box>
             </Box>
           {/* right-most column component */}
-          <Box sx={{ width: '25%', position:'relative', bgcolor: 'white', height: '90vh', border: 'thin blue solid' }}>
-            <Box sx={{ position:'relative', bgcolor: 'white', height: '90vh', border: 'thin blue solid' }} />
+          <Box sx={{ width: '25%', position:'relative', bgcolor: 'white', height: '90vh', border: 'thin grey dotted' }}>
+            <Notifications />
           </Box>
         </Container>
         <EditAccount userEmail={session && session.user.email} />
