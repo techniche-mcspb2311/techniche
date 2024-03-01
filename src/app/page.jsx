@@ -4,7 +4,6 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import MissionStatement from './landing/MissionStatement.jsx';
 import { EmployeeFAQ, CandidateFAQ } from "./landing/FAQ.jsx";
-import Footer from "./landing/Footer.jsx";
 
 export default function Home() {
     return (
@@ -12,7 +11,6 @@ export default function Home() {
             <MissionStatement />
             <EmployeeFAQ />
             <CandidateFAQ />
-            <Footer />
         </Box>
   );
 }

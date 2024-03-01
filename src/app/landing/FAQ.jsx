@@ -47,7 +47,7 @@ export function EmployeeFAQ() {
 
 export function CandidateFAQ() {
     return (
-        <Box mt={4} pb={20}>
+        <Box mt={4}>
             <Typography variant='h6' gutterBottom>
                 Candidate FAQ
             </Typography>
