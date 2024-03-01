@@ -7,9 +7,12 @@ import { Typography, Box } from '@mui/material';
 export default function MissionStatement() {
     return (
         <Box textAlign='center' pb={5} bgcolor="#307aff" borderRadius={4}>
-            <Box sx={{ p: 1 }}>
+            <Box display="flex" justifyContent="center" pt={3}>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/Techniche_Logo.jpg" alt="Logo" style={{ width: '250px', height: '84px' }} />
+            </Box>
+            <Box>
                 <Typography variant='h4' gutterBottom sx={{ mt: 2 }}>
-                    Mission Statement
+                    Our Mission
                 </Typography>
             </Box>
             <Box sx={{ p: 1 }}>
