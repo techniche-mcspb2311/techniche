@@ -45,83 +45,87 @@ const ProfileModal = ({profile, setProfile, candidates, sortedCandidates, setVie
   };
 
   return (
-    <Modal
-      open={profile}
-      onClose={handleClose}
-      aria-labelledby="modal-modal-title"
-      aria-describedby="modal-modal-description"
-    >
-      <Box sx={modalStyle}>
-        {edit ? (
-          <>
-            <TextField sx={{ position: 'relative', marginBottom: 2}}
-              id="outlined-multiline-static"
-              label="Name"
-              multiline
-              rows={1}
-              defaultValue={sortedCandidates[profile].name}
-              variant="outlined"
-            />
-            <TextField sx={{ position: 'relative', marginBottom: 2}}
-              id="outlined-multiline-static"
-              label="Score"
-              multiline
-              rows={1}
-              defaultValue={sortedCandidates[profile].score}
-              variant="outlined"
-            />
-            <TextField sx={{ position: 'relative', marginBottom: 2}}
-              id="outlined-multiline-static"
-              label="Earliest Start Date"
-              multiline
-              rows={1}
-              defaultValue={sortedCandidates[profile].earliestStartDate}
-              variant="outlined"
-            />
-            <TextField sx={{ position: 'relative', marginBottom: 2}}
-              id="outlined-multiline-static"
-              label="Interview Date"
-              multiline
-              rows={1}
-              defaultValue={sortedCandidates[profile].interviewDate}
-              variant="outlined"
-            />
-            <TextField sx={{ position: 'relative', marginBottom: 2}}
-              id="outlined-multiline-static"
-              label="Notes"
-              multiline
-              rows={15}
-              defaultValue={sortedCandidates[profile].notes}
-              variant="outlined"
-            />
-          </>
-        ) : (
-          <>
-            <Typography id="modal-modal-title" variant="h6" component="h2">
-              {sortedCandidates[profile].name}
-            </Typography>
-            <Typography id="modal-modal-title" variant="h6" component="h2">
-              Coding Challenge Score: {sortedCandidates[profile].score}
-            </Typography>
-            <Typography id="modal-modal-title" variant="h6" component="h2">
-              Earliest Start Date: {sortedCandidates[profile].earliestStartDate}
-            </Typography>
-            <Typography id="modal-modal-title" variant="h6" component="h2">
-              Interview Date: {sortedCandidates[profile].interviewDate}
-            </Typography>
-            <Typography id="modal-modal-title" variant="h6" component="h2">
-              Notes: {sortedCandidates[profile].notes}
-            </Typography>
-          </>
-        )}
-        {edit ? (
-          <Button variant="outlined" sx={{ position: 'relative' }} onClick={saveChanges}>save</Button>
-        ) : (
-          <Button variant="outlined" sx={{ position: 'relative' }} onClick={openEdit}>edit</Button>
-        )}
-        <Button variant="outlined" sx={{ position: 'relative' }} onClick={goBack}>back</Button>
-      </Box>
-    </Modal>
+    <>
+      {profile !== null && (
+        <Modal
+          open={true}
+          onClose={handleClose}
+          aria-labelledby="modal-modal-title"
+          aria-describedby="modal-modal-description"
+        >
+          <Box sx={modalStyle}>
+            {edit ? (
+              <>
+                <TextField sx={{ position: 'relative', marginBottom: 2}}
+                  id="outlined-multiline-static"
+                  label="Name"
+                  multiline
+                  rows={1}
+                  defaultValue={candidates[profile - 1].name}
+                  variant="outlined"
+                />
+                <TextField sx={{ position: 'relative', marginBottom: 2}}
+                  id="outlined-multiline-static"
+                  label="Score"
+                  multiline
+                  rows={1}
+                  defaultValue={candidates[profile - 1].score}
+                  variant="outlined"
+                />
+                <TextField sx={{ position: 'relative', marginBottom: 2}}
+                  id="outlined-multiline-static"
+                  label="Earliest Start Date"
+                  multiline
+                  rows={1}
+                  defaultValue={candidates[profile - 1].earliestStartDate}
+                  variant="outlined"
+                />
+                <TextField sx={{ position: 'relative', marginBottom: 2}}
+                  id="outlined-multiline-static"
+                  label="Interview Date"
+                  multiline
+                  rows={1}
+                  defaultValue={candidates[profile - 1].interviewDate}
+                  variant="outlined"
+                />
+                <TextField sx={{ position: 'relative', marginBottom: 2}}
+                  id="outlined-multiline-static"
+                  label="Notes"
+                  multiline
+                  rows={15}
+                  defaultValue={candidates[profile - 1].notes}
+                  variant="outlined"
+                />
+              </>
+            ) : (
+              <>
+                <Typography id="modal-modal-title" variant="h6" component="h2">
+                  {candidates[profile - 1].name}
+                </Typography>
+                <Typography id="modal-modal-title" variant="h6" component="h2">
+                  Coding Challenge Score: {candidates[profile - 1].score}
+                </Typography>
+                <Typography id="modal-modal-title" variant="h6" component="h2">
+                  Earliest Start Date: {candidates[profile - 1].earliestStartDate}
+                </Typography>
+                <Typography id="modal-modal-title" variant="h6" component="h2">
+                  Interview Date: {candidates[profile - 1].interviewDate}
+                </Typography>
+                <Typography id="modal-modal-title" variant="h6" component="h2">
+                  Notes: {candidates[profile - 1].notes}
+                </Typography>
+              </>
+            )}
+            {edit ? (
+              <Button variant="outlined" sx={{ position: 'relative' }} onClick={saveChanges}>save</Button>
+            ) : (
+              <Button variant="outlined" sx={{ position: 'relative' }} onClick={openEdit}>edit</Button>
+            )}
+            <Button variant="outlined" sx={{ position: 'relative' }} onClick={goBack}>back</Button>
+          </Box>
+        </Modal>
+      )}
+    </>
   );
 };
 
