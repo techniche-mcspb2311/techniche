@@ -6,10 +6,10 @@ import { Typography, Box } from '@mui/material';
 
 export default function MissionStatement() {
     return (
-        <Box textAlign='center' bgcolor="#307aff" borderRadius={4}>
+        <Box textAlign='center' pb={5} bgcolor="#307aff" borderRadius={4}>
             <Box sx={{ p: 1 }}>
                 <Typography variant='h4' gutterBottom sx={{ mt: 2 }}>
-                    Our Mission Statement
+                    Mission Statement
                 </Typography>
             </Box>
             <Box sx={{ p: 1 }}>
@@ -23,6 +23,9 @@ export default function MissionStatement() {
                     cupidatat non proident, sunt in culpa qui officia deserunt
                     mollit anim id est laborum.
                 </Typography>
+            </Box>
+            <Box display="flex" justifyContent="center" pt={3}>
+                <img src="https://media.istockphoto.com/id/153696622/photo/happy-senior-man-giving-thumb-up.jpg?s=612x612&w=0&k=20&c=b2BI4P4vvgEK9AqxQ_gl7EpWnr1BomTJV24RqtGpaRo=" alt="Logo" style={{ width: '66%', height: '66%' }} />
             </Box>
         </Box>
     );

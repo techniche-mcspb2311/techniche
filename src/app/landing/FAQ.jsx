@@ -10,7 +10,6 @@
         How long to hear back after an interview?
 */
 
-import React from 'react';
 import {
     Typography, Box, Accordion, AccordionDetails, AccordionSummary
 } from '@mui/material';
@@ -18,7 +17,7 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 export function EmployeeFAQ() {
     return (
-        <Box mt={4}>
+        <Box mt={4} mb={4}>
             <Typography variant='h6' gutterBottom>
                 Employee FAQ
             </Typography>
@@ -48,7 +47,7 @@ export function EmployeeFAQ() {
 
 export function CandidateFAQ() {
     return (
-        <Box mt={4}>
+        <Box mt={4} pb={20}>
             <Typography variant='h6' gutterBottom>
                 Candidate FAQ
             </Typography>
