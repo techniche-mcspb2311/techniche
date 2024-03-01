@@ -70,7 +70,7 @@ export default function BasicTabs() {
 
   return (
     <div>
-      <h1 style={{ textAlign: 'center', fontSize: '30px', backgroundColor: '#21282D', color: 'white' }}>Calendar:</h1>
+      <h1 style={{ textAlign: 'center', fontSize: '30px', backgroundColor: '#21282D', color: 'white', marginTop: '5vh', }}>Calendar:</h1>
       <Box className="calendarBox" sx={{ width: '100%', height: '30vh', backgroundColor: '#C2BBAB'}}>
         <Box sx={{ borderBottom: 1, borderColor: 'divider', backgroundColor: '#2A343B'}}>
           <Tabs value={value} onChange={handleChange} aria-label="basic tabs example" >
