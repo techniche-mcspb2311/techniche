@@ -24,7 +24,7 @@
     "crypto": "^1.0.1",
     "dayjs": "^1.11.10",
     "docker": "^1.0.0",
-    "mongodb": "^6.3.0",
+    "mongodb": "^6.4.0",
     "next": "^14.1.0",
     "next-auth": "^4.24.6",
     "nodemailer": "^6.9.10",
