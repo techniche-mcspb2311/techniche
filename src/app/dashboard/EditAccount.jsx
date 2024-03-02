@@ -3,14 +3,15 @@ import React, { useState, useEffect } from 'react';
 import Button from '@mui/material/Button';
 import Modal from '@mui/material/Modal';
 import Box from '@mui/material/Box';
-
+//STOP MAKING CHANGES AFTER THIS DELETES////////////////
 
 const EditAccount = ({userEmail}) => {
   const [open, setOpen] = useState(false);
-  const [jobTitle, setJobTitle] = useState('Job Title');
-  const [city, setCity] = useState('City');
-  const [phoneNumber, setPhoneNumber] = useState('Phone Number'); //userEmail.phoneNumber
-  const [imageUrl, setImageUrl] = useState('https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png');
+  const [userData, setUserData] = useState(null);
+  const [jobTitle, setJobTitle] = useState('');
+  const [city, setCity] = useState('');
+  const [phoneNumber, setPhoneNumber] = useState(''); //userEmail.phoneNumber???
+  const [imageUrl, setImageUrl] = useState('https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png'); //change to ('')
 
   const handleOpen = () => {
     setOpen(true);
@@ -91,3 +92,8 @@ const EditAccount = ({userEmail}) => {
 };
 
 export default EditAccount;
+
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//TRYING TO FETCH DATA PER USER THAT IS SIGNED IN

@@ -8,6 +8,7 @@ import CssBaseline from '@mui/material/CssBaseline';
 import Container from '@mui/material/Container';
 import Candidates from './CandidateList/Candidates';
 
+
 export default function Dashboard() {
     const { data: session } = useSession({
         // required session: https://next-auth.js.org/getting-started/client#require-session
