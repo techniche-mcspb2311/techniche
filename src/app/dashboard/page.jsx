@@ -31,6 +31,7 @@ export default function Dashboard() {
         <Container maxWidth="100vw" sx={{ display: 'flex' }}>
           {/* left-most column component */}
           <Box sx={{ width: '25%', position:'relative', bgcolor: 'white', height: '90vh', border: 'thin grey dotted' }}>
+            <EditAccount userEmail={session && session.user.email} />
             <Box sx={{ position:'relative', bgcolor: 'white', height: '45vh', border: 'thin grey dotted' }} />
             <AvailableRooms sx={{ position:'relative', bgcolor: 'white', height: '45vh', border: 'thin grey dotted' }} />
           </Box>
@@ -48,7 +49,6 @@ export default function Dashboard() {
             <Notifications />
           </Box>
         </Container>
-        <EditAccount userEmail={session && session.user.email} />
       </>
     );
 }
