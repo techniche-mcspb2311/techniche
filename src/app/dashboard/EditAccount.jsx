@@ -18,7 +18,7 @@ const EditAccount = ({userEmail}) => {
 
   const handleClose = () => {
     setOpen(false);
-  };
+  }; 
 
   const handleSave = () => {
     // Save changes (you can update your database or perform other actions here)
