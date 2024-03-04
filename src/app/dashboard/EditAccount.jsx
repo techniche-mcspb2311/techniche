@@ -38,7 +38,7 @@ const EditAccount = ({ userEmail }) => {
             bgcolor: 'background.paper',
             boxShadow: 24,
             p: 4,
-            borderRadius: 8,
+            // borderRadius: 8,
             width: 500,
             maxHeight: '100%',
             overflowY: 'auto',
