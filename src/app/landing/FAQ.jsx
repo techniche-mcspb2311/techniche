@@ -31,7 +31,7 @@ export function EmployeeFAQ() {
                     <Typography>
                         When you get to the website, there should be a Sign In
                         button on the top right of the page. Click the Sign In
-                        button and you'll be redirected to a sign in page. Enter
+                        button and you&apos;ll be redirected to a sign in page. Enter
                         your email address to be sent a verification link.
                     </Typography>
                 </AccordionDetails>
@@ -44,7 +44,7 @@ export function EmployeeFAQ() {
                 </AccordionSummary>
                 <AccordionDetails>
                     <Typography>
-                        When you're signed in, there should be a Dashboard button
+                        When you&apos;re signed in, there should be a Dashboard button
                         on the top right. Click the Dashboard button.
                     </Typography>
                 </AccordionDetails>
@@ -79,7 +79,7 @@ export function CandidateFAQ() {
                 </AccordionSummary>
                 <AccordionDetails>
                     <Typography>
-                        The interview will last 1 hour at most. You'll get a
+                        The interview will last 1 hour at most. You&apos;ll get a
                         10 minute warning from your recruiter to let you know
                         when your time is almost up.
                     </Typography>
@@ -93,9 +93,9 @@ export function CandidateFAQ() {
                 </AccordionSummary>
                 <AccordionDetails>
                     <Typography>
-                        There's a host of sites that will help you prepare for
-                        your interview. If you google "coding interview questions"
-                        there'll be sites like leetcode that pop up to help you
+                        There&apos;s a host of sites that will help you prepare for
+                        your interview. If you google &quot;coding interview questions&quot;
+                        there&apos;ll be sites like leetcode that pop up to help you
                         learn the data structures and algorithms necessary to
                         crack the coding interview. Youtube is another free and
                         available resource, but make sure you write the code too.
@@ -119,7 +119,7 @@ export function CandidateFAQ() {
             <Accordion>
                 <AccordionSummary expandIcon={<ExpandMoreIcon />}>
                     <Typography>
-                        Q: It says I'm not allowed in the coding room?
+                        Q: It says I&apos;m not allowed in the coding room?
                     </Typography>
                 </AccordionSummary>
                 <AccordionDetails>
@@ -138,8 +138,8 @@ export function CandidateFAQ() {
                 </AccordionSummary>
                 <AccordionDetails>
                     <Typography>
-                        Usually you'll hear back with the results from your
-                        recruiter in a timely manner. There's a lot of candidates
+                        Usually you&apos;ll hear back with the results from your
+                        recruiter in a timely manner. There&apos;s a lot of candidates
                         to go through and we try and get answers back within a
                         couple of weeks at most.
                     </Typography>

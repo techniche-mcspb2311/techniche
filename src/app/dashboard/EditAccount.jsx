@@ -98,7 +98,7 @@ const EditAccount = ({ userEmail }) => {
           </Button>
         </Box>
       </Modal>
-      <span style={{ marginLeft: '10px' }}>Recruiter's name</span>
+      <span style={{ marginLeft: '10px' }}>Recruiter&apos;s name</span>
     </Container>
   );
 };
