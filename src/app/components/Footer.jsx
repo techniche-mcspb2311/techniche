@@ -14,7 +14,7 @@ export default function Footer() {
         <Box bgcolor="#333" color="white" mt={5} py={3} px={2} position="static" bottom={0} width="100%">
             <Box display="flex" justifyContent="center" alignItems="center">
                 <Box display="flex" alignItems="flex-start" pr={5}>
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/Techniche_Logo.jpg" alt="Logo" style={{ width: '100px' }} />
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/Techniche_Logo.jpg" alt="Logo" style={{ width: '100px', borderRadius: '15%' }} />
                 </Box>
                 <Box display="flex" alignItems="center">
                     <Link href="#" color="inherit" underline="none" mr={2}>

@@ -8,7 +8,7 @@ export default function MissionStatement() {
     return (
         <Box textAlign='center' pb={5} bgcolor="#307aff" borderRadius={4}>
             <Box display="flex" justifyContent="center" pt={3}>
-                <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/Techniche_Logo.jpg" alt="Logo" style={{ width: '250px', height: '84px' }} />
+                <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/Techniche_Logo.jpg" alt="Logo" style={{ width: '250px', height: '84px', borderRadius: '15%' }} />
             </Box>
             <Box>
                 <Typography variant='h4' gutterBottom sx={{ mt: 2 }}>
