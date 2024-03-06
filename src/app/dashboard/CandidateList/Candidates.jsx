@@ -23,7 +23,10 @@ const Candidates = () => {
   useEffect(() => {
     fetch('/api/candidates')
       .then(response => response.json())
-      .then(data => setCandidates(data))
+      .then(data => {
+        setCandidates(data);
+        setSortedCandidates(data);
+      })
       .catch(error => console.error('Error fetching candidates:', error));
   }, []);
 
@@ -53,7 +56,6 @@ const Candidates = () => {
     pb: 3,
     overflow: 'scroll',
   };
-  console.log('candidates:', candidates)
 
   return (
     <>
@@ -72,7 +74,7 @@ const Candidates = () => {
             <Typography id="modal-modal-title" variant="h6" component="h2">
               Candidates
             </Typography>
-            {sortedCandidates.map((candidate, index) => {
+            {sortedCandidates && sortedCandidates.map((candidate, index) => {
               if (candidate.recruiter === 'theUser') {
                 return (
                   <ListItemButton key={index} onClick={() => candidateProfile(candidate.id)} sx={{ bgcolor: '#6ccc81', outline: 'thin black dotted', borderRadius: '25px' }}>
@@ -95,8 +97,8 @@ const Candidates = () => {
         <ProfileModal profile={profile} setProfile={setProfile} candidates={candidates} sortedCandidates={sortedCandidates} setViewAll={setViewAll}/>
       )}
       {/* Candidate List //////////////////////////////////////////////////// */}
-      <Box sx={{ position:'relative', overflow:'hidden', outline:'black thin dotted', bgcolor:'white', height:'35vh', width:'40vw', borderRadius:'30px', top:'`vh', left:'5vw' }}>
-        {sortedCandidates.map((candidate, index) => {
+      <Box sx={{ position:'relative', overflowY:'scroll', outline:'black thin dotted', bgcolor:'white', height:'35vh', width:'40vw', borderRadius:'30px', top:'`vh', left:'5vw' }}>
+        {sortedCandidates && sortedCandidates.map((candidate, index) => {
           if(candidate.recruiter === 'theUser') {
             return (
               <ListItemButton key={index} onClick={() => candidateProfile(candidate.id)} sx={{ position: 'relative', marginBottom: '.1vh', bgcolor: '#6ccc81', outline: 'thin white solid', borderRadius: '25px' }}>
