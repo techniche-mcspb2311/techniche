@@ -4,8 +4,6 @@ import { getServerSession } from 'next-auth';
 import SessionProvider from './components/SessionProvider';
 import { authOptions } from './api/auth/[...nextauth]/route';
 import "./globals.css";
-import { ThemeProvider } from '@mui/material/styles';
-import darkModeTheme from "./theme/theme";
 import '@fontsource/roboto/300.css';
 import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
@@ -24,13 +22,11 @@ export default async function RootLayout({ children }) {
     return (
         <html lang="en">
             <body className={inter.className}>
-                <ThemeProvider theme={darkModeTheme}>
                     <AppRouterCacheProvider>
                         <SessionProvider session={session}>
                             {children}
                         </SessionProvider>
                     </AppRouterCacheProvider>
-                </ThemeProvider>
             </body>
         </html>
     );
