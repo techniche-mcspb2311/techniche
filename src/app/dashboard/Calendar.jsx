@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
@@ -7,6 +7,7 @@ import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Modal from '@mui/material/Modal';
 import CalendarTwo from './Calendar-2';
+
 
 const style = {
   position: 'absolute',
@@ -67,10 +68,30 @@ export default function BasicTabs() {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+  const [calendarData, setCalendarData] = useState(null); // State to store user data
+
+  useEffect(() => {
+        // Fetch user data when the component mounts
+    fetchCalendarData();
+  }, []);
+
+  const fetchCalendarData = async () => {
+    try {
+      // Make a request to fetch user data from the backend
+      const response = await fetch('/api/calendar');
+      if (!response.ok) {
+        throw new Error('Failed to fetch calendar data');
+      }
+      const data = await response.json();
+      setCalendarData(data); // Update the state with the fetched user data
+    } catch (error) {
+      console.error('Error fetching user data:', error);
+    }
+  };
 
   return (
     <div>
-      <h1 style={{ textAlign: 'center', fontSize: '30px', backgroundColor: '#21282D', color: 'white' }}>Calendar:</h1>
+      <h1 style={{ textAlign: 'center', fontSize: '30px', backgroundColor: '#21282D', color: 'white', marginTop: '5vh', }}>Calendar:</h1>
       <Box className="calendarBox" sx={{ width: '100%', height: '30vh', backgroundColor: '#C2BBAB'}}>
         <Box sx={{ borderBottom: 1, borderColor: 'divider', backgroundColor: '#2A343B'}}>
           <Tabs value={value} onChange={handleChange} aria-label="basic tabs example" >
@@ -83,32 +104,32 @@ export default function BasicTabs() {
             <Tab sx={{ color: 'white'}} label="Saturday" {...a11yProps(6)} />
           </Tabs>
         </Box>
-  
+
         <CustomTabPanel value={value} index={0}>
-          <div style={listStyle}> free day </div>
+          <div style={listStyle}>{calendarData && calendarData[0].title}</div>
         </CustomTabPanel>
         <CustomTabPanel value={value} index={1}>
-          <div style={listStyle}> work </div>
-          <div style={listStyle}> meeting </div>
-          <div style={listStyle}> interview </div>
+          <div style={listStyle}> Work with Athan </div>
+          <div style={listStyle}> Meeting with Kyler </div>
+          <div style={listStyle}> Interview with Heather</div>
         </CustomTabPanel>
         <CustomTabPanel value={value} index={2}>
-          <div style={listStyle}> gym </div>
-          <div style={listStyle}> call </div>
-          <div style={listStyle}> interview </div>
+          <div style={listStyle}> Where is Dillion??? </div>
+          <div style={listStyle}> Call Dillion </div>
+          <div style={listStyle}> Find Dillion </div>
         </CustomTabPanel>
         <CustomTabPanel value={value} index={3}>
-          <div style={listStyle}> interview </div>
-          <div style={listStyle}> screening </div>
-          <div style={listStyle}> call </div>
+          <div style={listStyle}> Lunch with the team </div>
+          <div style={listStyle}> Phone screening with possible candidate </div>
+          <div style={listStyle}> Call mom </div>
         </CustomTabPanel>
         <CustomTabPanel value={value} index={4}>
-          <div style={listStyle}> network event </div>
-          <div style={listStyle}> interview </div>
+          <div style={listStyle}> networking event with Heather</div>
+          <div style={listStyle}> interview possible candidate</div>
         </CustomTabPanel>
         <CustomTabPanel value={value} index={5}>
-          <div style={listStyle}> work </div>
-          <div style={listStyle}> meeting </div>
+          <div style={listStyle}> Work with Adrian</div>
+          <div style={listStyle}> meeting with Adrian and Stephanie</div>
         </CustomTabPanel>
         <CustomTabPanel value={value} index={6}>
           <div style={listStyle}> free day </div>
@@ -128,9 +149,6 @@ export default function BasicTabs() {
           </Box>
         </Modal>
       </Box>
-
-
-
     </div>
   );
 }

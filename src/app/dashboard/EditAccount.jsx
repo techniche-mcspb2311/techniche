@@ -38,7 +38,7 @@ const EditAccount = ({ userEmail }) => {
 
   const handleClose = () => {
     setOpen(false);
-  };
+  }; 
 
   const handleSave = () => {
     handleClose();
