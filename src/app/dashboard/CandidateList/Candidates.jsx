@@ -40,6 +40,22 @@ const Candidates = () => {
     setViewAll(false);
     setProfile(candidateId);
   }
+
+  // const addNewCandidate = () => {
+  //   fetch('/api/candidates', {
+  //     method: 'POST',
+  //     headers: {
+  //       'Content-Type': 'application/json',
+  //     },
+  //     body: JSON.stringify({}),
+  //   })
+  //     .then(response => response.json())
+  //     .then(data => {
+  //     })
+  //     .catch(error => {
+  //       console.error('Error adding new candidate:', error);
+  //     });
+  // };
   
   const modalStyle = {
     position: 'absolute',
@@ -73,6 +89,7 @@ const Candidates = () => {
             <Sorting candidates={candidates} setSortedCandidates={setSortedCandidates}/>
             <Typography id="modal-modal-title" variant="h6" component="h2">
               Candidates
+              <Button variant="outlined" sx={{ position: 'relative', left: '0vw' }} onClick={addNewCandidate}>+</Button>
             </Typography>
             {sortedCandidates && sortedCandidates.map((candidate, index) => {
               if (candidate.recruiter === 'theUser') {
