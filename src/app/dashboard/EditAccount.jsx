@@ -25,7 +25,7 @@ const EditAccount = ({ userEmail }) => {
             throw new Error('Failed to fetch user data');
           }
           const data = await response.json();
-          console.log('User data:', data); 
+          // console.log('User data:', data); 
           setUserData(data); 
         } catch (error) {
           console.error('Error fetching user data:', error);
@@ -49,9 +49,13 @@ const EditAccount = ({ userEmail }) => {
     <Container maxWidth="sm">
       {userData ? (
         <div>
-          {console.log("here is the image", userData[0].imageURL)}
+          {/* {console.log("here is the image", userData[0].imageURL)} */}
           <Button onClick={handleOpen}>
-            <img src={userData[0].imageURL} alt="profile pic" style={{ width: '150px', height: 'auto', borderRadius: '50%' }} />
+             {userData && userData[0].imageURL ? (
+                <img src={userData[0].imageURL} alt="profile pic" style={{ width: '150px', height: 'auto', borderRadius: '50%' }} />
+              ) : (
+                <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png" alt="profile pic" style={{ width: '150px', height: 'auto', borderRadius: '50%' }} />
+              )}
           </Button>
           <Modal open={open} onClose={handleClose} >
             <Box
@@ -89,7 +93,7 @@ const EditAccount = ({ userEmail }) => {
                   id="city"
                   value={userData[0].city}
                   onChange={(e) => setCity(e.target.value)}
-                  placeholder={userData[0].city}
+                  placeholder="City"
                 />
               </div>
               <div style={{ marginBottom: 10 }}>
@@ -100,13 +104,17 @@ const EditAccount = ({ userEmail }) => {
                   id="phoneNumber"
                   value={userData[0].phoneNumber}
                   onChange={(e) => setPhoneNumber(e.target.value)}
-                  placeholder={userData[0].phoneNumber}
+                  placeholder="Phone Number"
                 />
               </div>
               <div style={{ width: '100%', textAlign: 'center', marginBottom: 10 }}>
                 <label htmlFor="imageUrl">Profile Picture:</label>
                 <br />
-                <img src={userData && userData[0].imageURL} alt="profile pic" style={{ maxWidth: '100%', height: 'auto' }} />
+                {userData && userData[0].imageURL ? ( // Check if imageURL exists
+                  <img src={userData[0].imageURL} alt="profile pic" style={{ maxWidth: '100%', height: 'auto' }} />
+                ) : (
+                  <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png" alt="profile pic" style={{ maxWidth: '100%', height: 'auto' }} />
+                )}
               </div>
               <label htmlFor="imageUrl">Image URL:</label>
               <br />
