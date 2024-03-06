@@ -2,7 +2,7 @@ import { getDb } from '@/db';
 import { mailer } from '@/email';
 import { ObjectId } from 'mongodb';
 
-export const dynamc = 'force-dynamc';
+export const dynamic = 'force-dynamic';
 
 export async function POST(request) {
     // fetch('/api/challenges/submit', { submission: "function () { code ... }", challengeId: 'string' })

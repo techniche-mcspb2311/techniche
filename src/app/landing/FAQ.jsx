@@ -29,15 +29,23 @@ export function EmployeeFAQ() {
                 </AccordionSummary>
                 <AccordionDetails>
                     <Typography>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing 
-                        elit, sed do eiusmod tempor incididunt ut labore et 
-                        dolore magna aliqua. Ut enim ad minim veniam, quis 
-                        nostrud exercitation ullamco laboris nisi ut aliquip 
-                        ex ea commodo consequat. Duis aute irure dolor in 
-                        reprehenderit in voluptate velit esse cillum dolore eu 
-                        fugiat nulla pariatur. Excepteur sint occaecat cupidatat 
-                        non proident, sunt in culpa qui officia deserunt mollit 
-                        anim id est laborum.
+                        When you get to the website, there should be a Sign In
+                        button on the top right of the page. Click the Sign In
+                        button and you&apos;ll be redirected to a sign in page. Enter
+                        your email address to be sent a verification link.
+                    </Typography>
+                </AccordionDetails>
+            </Accordion>
+            <Accordion>
+                <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+                    <Typography>
+                        Q: How do I get to the Dashboard?
+                    </Typography>
+                </AccordionSummary>
+                <AccordionDetails>
+                    <Typography>
+                        When you&apos;re signed in, there should be a Dashboard button
+                        on the top right. Click the Dashboard button.
                     </Typography>
                 </AccordionDetails>
             </Accordion>
@@ -54,80 +62,71 @@ export function CandidateFAQ() {
             <Accordion>
                 <AccordionSummary expandIcon={<ExpandMoreIcon />}>
                     <Typography>
-                        Q: What code editor can I use?
+                        Q: What code editor can I use during the interview?
                     </Typography>
                 </AccordionSummary>
                 <AccordionDetails>
                     <Typography>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing 
-                        elit, sed do eiusmod tempor incididunt ut labore et 
-                        dolore magna aliqua. Ut enim ad minim veniam, quis 
-                        nostrud exercitation ullamco laboris nisi ut aliquip 
-                        ex ea commodo consequat. Duis aute irure dolor in 
-                        reprehenderit in voluptate velit esse cillum dolore eu 
-                        fugiat nulla pariatur. Excepteur sint occaecat cupidatat 
-                        non proident, sunt in culpa qui officia deserunt mollit 
-                        anim id est laborum.
+                        You will receive an online code editor.
                     </Typography>
                 </AccordionDetails>
             </Accordion>
             <Accordion>
                 <AccordionSummary expandIcon={<ExpandMoreIcon />}>
                     <Typography>
-                        Q: Tell candidates how long to expect the interview to last
+                        Q: How long is the interview?
                     </Typography>
                 </AccordionSummary>
                 <AccordionDetails>
                     <Typography>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing 
-                        elit, sed do eiusmod tempor incididunt ut labore et 
-                        dolore magna aliqua. Ut enim ad minim veniam, quis 
-                        nostrud exercitation ullamco laboris nisi ut aliquip 
-                        ex ea commodo consequat. Duis aute irure dolor in 
-                        reprehenderit in voluptate velit esse cillum dolore eu 
-                        fugiat nulla pariatur. Excepteur sint occaecat cupidatat 
-                        non proident, sunt in culpa qui officia deserunt mollit 
-                        anim id est laborum.
+                        The interview will last 1 hour at most. You&apos;ll get a
+                        10 minute warning from your recruiter to let you know
+                        when your time is almost up.
                     </Typography>
                 </AccordionDetails>
             </Accordion>
             <Accordion>
                 <AccordionSummary expandIcon={<ExpandMoreIcon />}>
                     <Typography>
-                        Q: Ways to prepare for your interview
+                        Q: How can I prepare for my interview?
                     </Typography>
                 </AccordionSummary>
                 <AccordionDetails>
                     <Typography>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing 
-                        elit, sed do eiusmod tempor incididunt ut labore et 
-                        dolore magna aliqua. Ut enim ad minim veniam, quis 
-                        nostrud exercitation ullamco laboris nisi ut aliquip 
-                        ex ea commodo consequat. Duis aute irure dolor in 
-                        reprehenderit in voluptate velit esse cillum dolore eu 
-                        fugiat nulla pariatur. Excepteur sint occaecat cupidatat 
-                        non proident, sunt in culpa qui officia deserunt mollit 
-                        anim id est laborum.
+                        There&apos;s a host of sites that will help you prepare for
+                        your interview. If you google &quot;coding interview questions&quot;
+                        there&apos;ll be sites like leetcode that pop up to help you
+                        learn the data structures and algorithms necessary to
+                        crack the coding interview. Youtube is another free and
+                        available resource, but make sure you write the code too.
                     </Typography>
                 </AccordionDetails>
             </Accordion>
             <Accordion>
                 <AccordionSummary expandIcon={<ExpandMoreIcon />}>
                     <Typography>
-                        Q: Show up early
+                        Q: What time is the interview?
                     </Typography>
                 </AccordionSummary>
                 <AccordionDetails>
                     <Typography>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing 
-                        elit, sed do eiusmod tempor incididunt ut labore et 
-                        dolore magna aliqua. Ut enim ad minim veniam, quis 
-                        nostrud exercitation ullamco laboris nisi ut aliquip 
-                        ex ea commodo consequat. Duis aute irure dolor in 
-                        reprehenderit in voluptate velit esse cillum dolore eu 
-                        fugiat nulla pariatur. Excepteur sint occaecat cupidatat 
-                        non proident, sunt in culpa qui officia deserunt mollit 
-                        anim id est laborum.
+                        The interview time will be given by your recruiter so
+                        make sure to stay in contact with them throughout the
+                        process.
+                    </Typography>
+                </AccordionDetails>
+            </Accordion>
+            <Accordion>
+                <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+                    <Typography>
+                        Q: It says I&apos;m not allowed in the coding room?
+                    </Typography>
+                </AccordionSummary>
+                <AccordionDetails>
+                    <Typography>
+                        Your recruiter should have given you a passkey to allow
+                        you to enter the room. Enter the passkey or follow the
+                        URL link they have provided.
                     </Typography>
                 </AccordionDetails>
             </Accordion>
@@ -139,15 +138,10 @@ export function CandidateFAQ() {
                 </AccordionSummary>
                 <AccordionDetails>
                     <Typography>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing 
-                        elit, sed do eiusmod tempor incididunt ut labore et 
-                        dolore magna aliqua. Ut enim ad minim veniam, quis 
-                        nostrud exercitation ullamco laboris nisi ut aliquip 
-                        ex ea commodo consequat. Duis aute irure dolor in 
-                        reprehenderit in voluptate velit esse cillum dolore eu 
-                        fugiat nulla pariatur. Excepteur sint occaecat cupidatat 
-                        non proident, sunt in culpa qui officia deserunt mollit 
-                        anim id est laborum.
+                        Usually you&apos;ll hear back with the results from your
+                        recruiter in a timely manner. There&apos;s a lot of candidates
+                        to go through and we try and get answers back within a
+                        couple of weeks at most.
                     </Typography>
                 </AccordionDetails>
             </Accordion>

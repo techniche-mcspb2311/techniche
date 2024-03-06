@@ -1,6 +1,6 @@
 import { getDb } from '@/db';
 
-export const dynamc = 'force-dynamc';
+export const dynamic = 'force-dynamic';
 
 export async function GET(request) {
     const db = await getDb();
