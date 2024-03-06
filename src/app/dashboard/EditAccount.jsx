@@ -9,9 +9,9 @@ import Container from '@mui/material/Container';
 const EditAccount = ({ userEmail }) => {
   const [open, setOpen] = useState(false);
   const [jobTitle, setJobTitle] = useState('');
-  // const [city, setCity] = useState('');
-  // const [phoneNumber, setPhoneNumber] = useState('');
-  // const [imageUrl, setImageUrl] = useState('https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png');
+  const [city, setCity] = useState('');
+  const [phoneNumber, setPhoneNumber] = useState('');
+  const [imageUrl, setImageUrl] = useState('https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png');
   const [userData, setUserData] = useState(null);
   useEffect(() => {
         fetchUserData();
@@ -40,8 +40,37 @@ const EditAccount = ({ userEmail }) => {
     setOpen(false);
   };
 
-  const handleSave = () => {
-    handleClose();
+  const handleSave = async () => {
+    if (!userData) {
+      console.error('User data is not available');
+      return;
+    }
+  
+    const updatedUserData = {
+      jobTitle,
+      city,
+      phoneNumber,
+      imageURL: imageUrl // Assuming your server expects 'imageURL'
+    };
+  
+    try {
+      const response = await fetch('/api/users', {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(updatedUserData)
+      });
+  
+      if (response.ok) {
+        console.log('User updated successfully');
+        handleClose();
+      } else {
+        console.error('Failed to update user');
+      }
+    } catch (error) {
+      console.error('Error updating user data:', error);
+    }
   };
   
 
@@ -190,3 +219,4 @@ export default EditAccount;
 
 // export default EditAccount;
 
+//////////////////////////////////////////////////////////////////////////////////////////////
