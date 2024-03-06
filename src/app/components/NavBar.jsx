@@ -16,7 +16,7 @@ function AuthButton({ session }) {
     if (session) {
         return (
             <Link href="/dashboard" passHref>
-                <Button variant="contained">Dashboard</Button>
+                <Button color="primary" variant="contained">Dashboard</Button>
             </Link>
         );
     } else {
@@ -64,7 +64,7 @@ function NavBar() {
                             justifyContent: 'space-between',
                             flexShrink: 0,
                             borderRadius: '999px',
-                            bgcolor: 'rgba(255, 255, 255, 0.4)',
+                            bgcolor: 'primary',
                             backgropFilter: 'blur(24px)',
                             maxHeight: 40,
                             border: '1px solid',
@@ -88,7 +88,7 @@ function NavBar() {
                         <AuthButton session={session} />
                         <MovingNavBar toggleDrawer={toggleDrawer} />
                         <Drawer anchor="right" open={open} onClose={toggleDrawer(false)}>
-                            <Box sx={{ minWidth: '60dvw', p: 2, backgroundColor: 'background.paper', flexGrow: 1 }}>
+                            <Box sx={{ minWidth: '60dvw', p: 2, backgroundColor: 'primary', flexGrow: 1 }}>
                                 <Box
                                     sx={{
                                         display: 'flex',

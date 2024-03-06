@@ -6,17 +6,17 @@ import { Typography, Box } from '@mui/material';
 
 export default function MissionStatement() {
     return (
-        <Box textAlign='center' pb={5} bgcolor="#307aff" borderRadius={4}>
+        <Box textAlign='center' pb={5} bgcolor="primary" borderRadius={4}>
             <Box display="flex" justifyContent="center" pt={3}>
                 <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/Techniche_Logo.jpg" alt="Logo" style={{ width: '250px', height: '84px', borderRadius: '15%' }} />
             </Box>
             <Box>
-                <Typography variant='h4' gutterBottom sx={{ mt: 2 }}>
+                <Typography variant='h4' color='primary' gutterBottom sx={{ mt: 2 }}>
                     Our Mission
                 </Typography>
             </Box>
             <Box sx={{ p: 1 }}>
-                <Typography variant='body1' color='textSecondary'>
+                <Typography variant='body1' color='primary'>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                     sed do eiusmod tempor incididunt ut labore et dolore magna
                     aliqua. Ut enim ad minim veniam, quis nostrud exercitation

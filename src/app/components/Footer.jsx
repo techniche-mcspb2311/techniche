@@ -11,7 +11,7 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 
 export default function Footer() {
     return (
-        <Box bgcolor="#333" color="white" mt={5} py={3} px={2} position="static" bottom={0} width="100%">
+        <Box mt={5} py={3} px={2} position="static" bottom={0} width="100%">
             <Box display="flex" justifyContent="center" alignItems="center">
                 <Box display="flex" alignItems="flex-start" pr={5}>
                     <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/Techniche_Logo.jpg" alt="Logo" style={{ width: '100px', borderRadius: '15%' }} />
