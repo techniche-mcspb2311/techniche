@@ -109,27 +109,27 @@ export default function BasicTabs() {
           <div style={listStyle}>{calendarData && calendarData[0].title}</div>
         </CustomTabPanel>
         <CustomTabPanel value={value} index={1}>
-          <div style={listStyle}> work </div>
-          <div style={listStyle}> meeting </div>
-          <div style={listStyle}> interview </div>
+          <div style={listStyle}> Work with Athan </div>
+          <div style={listStyle}> Meeting with Kyler </div>
+          <div style={listStyle}> Interview with Heather</div>
         </CustomTabPanel>
         <CustomTabPanel value={value} index={2}>
-          <div style={listStyle}> gym </div>
-          <div style={listStyle}> call </div>
-          <div style={listStyle}> interview </div>
+          <div style={listStyle}> Where is Dillion??? </div>
+          <div style={listStyle}> Call Dillion </div>
+          <div style={listStyle}> Find Dillion </div>
         </CustomTabPanel>
         <CustomTabPanel value={value} index={3}>
-          <div style={listStyle}> interview </div>
-          <div style={listStyle}> screening </div>
-          <div style={listStyle}> call </div>
+          <div style={listStyle}> Lunch with the team </div>
+          <div style={listStyle}> Phone screening with possible candidate </div>
+          <div style={listStyle}> Call mom </div>
         </CustomTabPanel>
         <CustomTabPanel value={value} index={4}>
-          <div style={listStyle}> network event </div>
-          <div style={listStyle}> interview </div>
+          <div style={listStyle}> networking event with Heather</div>
+          <div style={listStyle}> interview possible candidate</div>
         </CustomTabPanel>
         <CustomTabPanel value={value} index={5}>
-          <div style={listStyle}> work </div>
-          <div style={listStyle}> meeting </div>
+          <div style={listStyle}> Work with Adrian</div>
+          <div style={listStyle}> meeting with Adrian and Stephanie</div>
         </CustomTabPanel>
         <CustomTabPanel value={value} index={6}>
           <div style={listStyle}> free day </div>
