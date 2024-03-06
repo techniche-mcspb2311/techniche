@@ -1,15 +1,14 @@
-import React, { useState, useEffect } from 'react';
-// import { useSession } from 'next-auth/react';
+import React, { useState } from 'react';
 import Button from '@mui/material/Button';
 import Modal from '@mui/material/Modal';
 import Box from '@mui/material/Box';
+import Container from '@mui/material/Container';
 
-
-const EditAccount = ({userEmail}) => {
+const EditAccount = ({ userEmail }) => {
   const [open, setOpen] = useState(false);
-  const [jobTitle, setJobTitle] = useState('Job Title');
-  const [city, setCity] = useState('City');
-  const [phoneNumber, setPhoneNumber] = useState('Phone Number'); //userEmail.phoneNumber
+  const [jobTitle, setJobTitle] = useState('');
+  const [city, setCity] = useState('');
+  const [phoneNumber, setPhoneNumber] = useState('');
   const [imageUrl, setImageUrl] = useState('https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png');
 
   const handleOpen = () => {
@@ -21,18 +20,31 @@ const EditAccount = ({userEmail}) => {
   }; 
 
   const handleSave = () => {
-    // Save changes (you can update your database or perform other actions here)
     handleClose();
   };
 
   return (
-    <div>
-      <Button variant="contained" color="primary" onClick={handleOpen}>
-        Edit Profile
+    <Container maxWidth="sm">
+       <Button onClick={handleOpen}>
+        <img src={imageUrl} alt="profile pic" style={{ width: '150px', height: 'auto', borderRadius: '50%' }} />
       </Button>
       <Modal open={open} onClose={handleClose} >
-        <div style={{ width: 400, padding: 20 }}>
-          <h2>Edit Account</h2>
+        <Box
+          sx={{
+            position: 'absolute',
+            top: '50%',
+            left: '50%',
+            transform: 'translate(-50%, -50%)',
+            bgcolor: 'background.paper',
+            boxShadow: 24,
+            p: 4,
+            // borderRadius: 8,
+            width: 500,
+            maxHeight: '100%',
+            overflowY: 'auto',
+          }}
+        >
+          <h2 style={{ fontSize: '24px', marginBottom: '20px' }}>Edit Account</h2>
           <div style={{ marginBottom: 10 }}>
             <label htmlFor="jobTitle">Job Title:</label>
             <br />
@@ -84,10 +96,14 @@ const EditAccount = ({userEmail}) => {
           <Button variant="contained" color="primary" onClick={handleSave}>
             Save
           </Button>
-        </div>
+        </Box>
       </Modal>
-    </div>
+      <span style={{ marginLeft: '10px' }}>Recruiter&apos;s name</span>
+    </Container>
   );
 };
 
 export default EditAccount;
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//TRYING TO FETCH DATA PER USER THAT IS SIGNED IN
