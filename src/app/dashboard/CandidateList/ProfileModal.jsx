@@ -37,6 +37,48 @@ const ProfileModal = ({ profile, setProfile, candidates, setViewAll }) => {
     }));
   };
 
+  const deleteCandidate = async () => {
+    if (window.confirm('Are you sure you want to delete this candidate?')) {
+        try {
+            const deleteResponse = await fetch(`api/candidates/${profile}`, {
+                method: 'DELETE',
+            });
+
+            if (deleteResponse.ok) {
+                console.log('Candidate deleted successfully');
+
+                const notifyResponse = await fetch('api/notifications', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        contents: `Candidate ${updatedProfile.name} has been deleted`,
+                        isNew: true,
+                        date: new Date(),
+                        time: new Date().toLocaleTimeString(),
+                    }),
+                });
+
+                if (notifyResponse.ok) {
+                    console.log('Notification sent successfully');
+                } else {
+                    console.error('Failed to send notification');
+                }
+            } else {
+                console.error('Failed to delete candidate');
+            }
+        } catch (error) {
+            console.error('Error occurred while deleting candidate:', error);
+        }
+
+        setProfile(null);
+        setViewAll(true);
+    } else {
+        console.log('Canceled');
+    }
+};
+
   const saveChanges = async () => {
     try {
       const response = await fetch(`api/candidates/${profile}`, {
@@ -189,7 +231,7 @@ const ProfileModal = ({ profile, setProfile, candidates, setViewAll }) => {
             ) : (
               <>
                 <Button variant="outlined" sx={{ position: 'relative' }} onClick={openEdit}>Edit</Button>
-                <Button variant="outlined" sx={{ position: 'relative' }} onClick={openEdit}>Delete</Button>
+                <Button variant="outlined" sx={{ position: 'relative' }} onClick={deleteCandidate}>Delete</Button>
               </>
             )}
             <Button variant="outlined" sx={{ position: 'relative' }} onClick={goBack}>Back</Button>

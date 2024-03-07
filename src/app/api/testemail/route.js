@@ -1,6 +1,6 @@
 import { mailer } from '@/email';
 
-export const dynamc = 'force-dynamc';
+export const dynamic = 'force-dynamic';
 
 export async function GET(request) {
     await mailer.sendMail({

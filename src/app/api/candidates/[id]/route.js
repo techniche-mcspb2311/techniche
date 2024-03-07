@@ -30,3 +30,12 @@ export async function PATCH(request, { params: { id } }) {
 
     return Response.json({ message: 'Candidate updated successfully' });
 }
+
+export async function DELETE(request, { params: { id } }) {
+    const db = await getDb();
+    const candidates = db.collection('candidates');
+
+    await candidates.deleteOne({ id: Number(id) });
+
+    return Response.json({ message: 'Candidate deleted successfully' });
+}
