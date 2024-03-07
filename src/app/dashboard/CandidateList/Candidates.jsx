@@ -40,6 +40,7 @@ const Candidates = () => {
 
   function candidateProfile(candidateId) {
     setViewAll(false);
+    console.log(candidateId);
     setProfile(candidateId);
   }
 

@@ -7,12 +7,13 @@ import TextField from '@mui/material/TextField';
 
 const ProfileModal = ({ profile, setProfile, candidates, setViewAll }) => {
   const [edit, setEdit] = useState(false);
+  console.log(candidates[profile].name, profile)
   const [updatedProfile, setUpdatedProfile] = useState({
-    name: candidates[profile - 1].name,
-    score: candidates[profile - 1].score,
-    earliestStartDate: candidates[profile - 1].earliestStartDate,
-    interviewDate: candidates[profile - 1].interviewDate,
-    notes: candidates[profile - 1].notes
+    name: candidates[profile].name,
+    score: candidates[profile].score,
+    earliestStartDate: candidates[profile].earliestStartDate,
+    interviewDate: candidates[profile].interviewDate,
+    notes: candidates[profile].notes
   });
 
   const handleClose = () => {
