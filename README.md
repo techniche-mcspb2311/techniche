@@ -66,6 +66,42 @@ system, you can run the `down` subcommand:
 docker compose down
 ```
 
+Here's a step-by-step guide on connecting to your database:
+
+- Install the mongodb package using npm: npm install mongodb
+- Import MongoClient from the mongodb package: const { MongoClient } = require('mongodb');
+- Connect to your MongoDB database using the connection string. If your MongoDB is running in another Docker container, make sure to use the name of that container as the hostname in your connection string.
+- Use the db method to get a reference to your database, and the collection method to get a reference to the collection you want to interact with.
+- Use the insertOne, find, updateOne, etc. methods to interact with your collection.
+
+Here's how the code would look:
+
+const { MongoClient } = require('mongodb');
+
+async function main() {
+  const uri = process.env.MONGODB_URI;
+  const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+
+  try {
+    await client.connect();
+
+    const database = client.db(process.env.DB);
+    const users = database.collection('users');
+
+    // Insert a document
+    const doc = { email: process.env.ADMIN_EMAIL, isAdmin: true };
+    const result = await users.insertOne(doc);
+
+    console.log(`Inserted document with _id: ${result.insertedId}`);
+  } finally {
+    await client.close();
+  }
+}
+
+main().catch(console.error);
+
+- Remember to replace process.env.MONGODB_URI with your actual MongoDB connection string, and process.env.DB with the name of your database. Also, make sure to handle errors appropriately in your production code.
+
 ## Generate Inline Documentation
 
 Is the codebase getting a little too big? Try generating some inline documentation, so you can
