@@ -98,7 +98,7 @@ export default function BasicTabs() {
       <h1 style={{ textAlign: 'center', fontSize: '30px', borderTopRightRadius: "20px", borderTopLeftRadius: '20px', backgroundColor: '#21282D', color: 'white', marginTop: '5vh', width: "91.5%"}}>
         - Calendar -
       </h1>
-      <Box className="calendarBox" sx={{ width: '91.5%', height: '30vh', borderRadius: "30px", backgroundColor: '#C2BBAB', boxShadow: '2px 3px 10px 0 #000000'}}>
+      <Box className="calendarBox" sx={{ width: '91.5%', height: '30vh', borderRadius: "30px", backgroundColor: '#FFF3D6', boxShadow: '2px 3px 10px 0 #000000'}}>
         <Box sx={{ borderBottom: 1, borderColor: 'divider', backgroundColor: '#2A343B'}}>
           <Tabs value={value} onChange={handleChange} aria-label="basic tabs example" >
             <Tab sx={{ color: 'white'}} label="Sunday" {...a11yProps(0)} />
