@@ -17,14 +17,14 @@ export default function Footer() {
                     <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/Techniche_Logo.jpg" alt="Logo" style={{ width: '100px', borderRadius: '15%' }} />
                 </Box>
                 <Box display="flex" alignItems="center">
-                    <Link href="#" color="inherit" underline="none" mr={2}>
+                    <Link href="https://www.facebook.com/Dylan.W.Gordon" target="_blank" rel="noopener noreferrer" color="inherit" underline="none" mr={2}>
                         <FacebookIcon />
                     </Link>
-                    <Link href="#" color="inherit" underline="none" mr={2}>
-                        <TwitterIcon />
-                    </Link>
-                    <Link href="#" color="inherit" underline="none">
+                    <Link href="https://www.linkedin.com/in/dylan-w-gordon/" target="_blank" rel="noopener noreferrer" color="inherit" underline="none" mr={2}>
                         <LinkedInIcon />
+                    </Link>
+                    <Link href="https://www.linkedin.com/in/dylan-w-gordon/" target="_blank" rel="noopener noreferrer" color="inherit" underline="none" mr={2}>
+                        <TwitterIcon />
                     </Link>
                 </Box>
             </Box>
