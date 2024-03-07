@@ -11,6 +11,7 @@ import Drawer from '@mui/material/Drawer';
 import Typography from '@mui/material/Typography';
 import MenuIcon from '@mui/icons-material/Menu';
 import Link from 'next/link';
+import logo from '../../../public/logo.png';
 
 function AuthButton({ session }) {
     if (session) {
@@ -74,8 +75,8 @@ function NavBar() {
                                         4px 4px 12px -2.5px rgba(85, 166, 246, 0.15)`,
                         }}
                     >
-                        <Box display="flex" justifyContent="center" pt={3} sx={{ mt: -3 }}>
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/Techniche_Logo.jpg" alt="Logo" style={{ width: '125px', height: '41px', borderRadius: '15%' }} />
+                        <Box display="flex" alignItems="flex-start" pr={5}>
+                            <img src={logo.src} alt="Logo" style={{ width: '200px', borderRadius: '15%' }} />
                         </Box>
                         <AuthButton session={session} />
                         <MovingNavBar toggleDrawer={toggleDrawer} />
