@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import Tabs from '@mui/material/Tabs';
@@ -106,7 +108,7 @@ export default function BasicTabs() {
         </Box>
 
         <CustomTabPanel value={value} index={0}>
-          <div style={listStyle}>{calendarData && calendarData[0].title}</div>
+          <div style={listStyle}>{calendarData && calendarData[0] && calendarData[0].title}</div>
         </CustomTabPanel>
         <CustomTabPanel value={value} index={1}>
           <div style={listStyle}> Work with Athan </div>

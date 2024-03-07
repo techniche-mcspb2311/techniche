@@ -28,12 +28,3 @@ export async function POST(request) {
 
     return Response.json('Email sent!');
 }
-
-export async function GET(request) {
-    const db = await getDb();
-    const challenges = db.collection('challenges');
-
-    const cs = await challenges.find({}).toArray();
-
-    return Response.json(cs);
-}

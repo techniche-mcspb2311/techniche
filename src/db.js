@@ -27,36 +27,41 @@
 //     return db;
 // });
 
+let appliedSeed = false;
 
 async function seed(db) {
-    const users = db.collection('users');
-    let adminExists;
-    if (process.env.ADMIN_EMAIL) {
-        console.log('admin email', process.env.ADMIN_EMAIL);
-        adminExists = await users.findOne({ email: process.env.ADMIN_EMAIL });
-        if (!adminExists) {
-            adminExists = {};
-            const inserted = await users.insertOne({
-                email: process.env.ADMIN_EMAIL,
-                isAdmin: true
-            });
-            adminExists._id = inserted.insertedId;
-            console.log('inserted email account');
-        } else if (!adminExists.isAdmin) {
-            await users.updateOne({
-                email: process.env.ADMIN_EMAIL
-            }, {
-                "$set": { isAdmin: true }
-            });
-            console.log('updated email account');
+    if (!appliedSeed) {
+        const users = db.collection('users');
+        let adminExists;
+        if (process.env.ADMIN_EMAIL) {
+            console.log('admin email', process.env.ADMIN_EMAIL);
+            adminExists = await users.findOne({ email: process.env.ADMIN_EMAIL });
+            if (!adminExists) {
+                adminExists = {};
+                const inserted = await users.insertOne({
+                    email: process.env.ADMIN_EMAIL,
+                    isAdmin: true
+                });
+                adminExists._id = inserted.insertedId;
+                console.log('inserted email account');
+            } else if (!adminExists.isAdmin) {
+                await users.updateOne({
+                    email: process.env.ADMIN_EMAIL
+                }, {
+                    "$set": { isAdmin: true }
+                });
+                console.log('updated email account');
+            }
         }
+        const challenges = db.collection('challenges');
+        await challenges.deleteMany({});
+        const challengeId = await challenges.insertOne({
+            passcode: '1234',
+            recruiterId: adminExists._id
+        });
+        console.log("Here's the initial challenge id:", challengeId);
+        appliedSeed = true;
     }
-    const challenges = db.collection('challenges');
-    const challengeId = await challenges.insertOne({
-        passcode: '1234',
-        recruiterId: adminExists._id
-    });
-    console.log("Here's the initial challenge id:", challengeId);
 }
 
 // This approach is taken from https://github.com/vercel/next.js/tree/canary/examples/with-mongodb
@@ -93,12 +98,19 @@ if (process.env.NODE_ENV === "development") {
 // separate module, the client can be shared across functions.
 export const conn = clientPromise;
 
+async function applySeed() {
+    const client = await clientPromise;
+    const db = client.db(process.env.DB);
+    await seed(db);
+}
+
+applySeed();
+
 /** Get the singleton MongoDB connection */
 export async function getDb() {
     try {
         const client = await clientPromise;
         const db = client.db(process.env.DB);
-        await seed(db);
         return db;
     } catch(e) {
         console.error('Couldn\'t get Mongo Database', e);
