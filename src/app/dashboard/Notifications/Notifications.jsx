@@ -18,11 +18,11 @@ const Notifications = () => {
     return (
         <>
             Notifications
-            <Box sx={{ position:'relative', bgcolor: 'white', height: '85vh', width: '20vw', top: '0vh', left: '1vw', border: 'thin black dotted', overflowY: 'scroll', borderRadius: '20px' }}>
-                    {notifications.map((notification, index) => (
-                        <ListItemText key={index} primary={notification.contents} secondary={notification.date + ' @ ' + notification.time} sx={{ position: 'relative', bgcolor: '#6ccc81', width: '18.5vw', top: '.1vh', left: '.25vw' }} />
-                    ))}
-                </Box>  
+            <Box sx={{ position: 'relative', bgcolor: 'white', height: '85vh', width: '20vw', top: '0vh', left: '1vw', border: 'thin black dotted', overflowY: 'scroll', borderRadius: '20px' }}>
+                {notifications.slice(0).reverse().map((notification, index) => (
+                <ListItemText key={index} primary={notification.contents} secondary={notification.date + ' @ ' + notification.time} sx={{ position: 'relative', bgcolor: '#6ccc81', width: '18.5vw', top: '.1vh', left: '.25vw' }} />
+                ))}
+            </Box> 
         </>
     );
 };

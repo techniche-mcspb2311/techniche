@@ -40,7 +40,7 @@ const ProfileModal = ({ profile, setProfile, candidates, setViewAll }) => {
   const saveChanges = async () => {
     try {
       const response = await fetch(`api/candidates/${profile}`, {
-        method: 'PUT',
+        method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',
         },
@@ -51,6 +51,28 @@ const ProfileModal = ({ profile, setProfile, candidates, setViewAll }) => {
         console.log('Candidate updated successfully');
       } else {
         console.error('Failed to update candidate');
+      }
+      try {
+        const response = await fetch('api/notifications', {
+          method: 'POST',
+          headers: {
+        'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            contents: `Candidate ${updatedProfile.name} has been updated`,
+            isNew: true,
+            date: new Date(),
+            time: new Date().toLocaleTimeString(),
+          }),
+        });
+
+        if (response.ok) {
+          console.log('Candidate updated successfully');
+        } else {
+          console.error('Failed to update candidate');
+        }
+      } catch (error) {
+          console.error('Error updating candidate:', error);
       }
     } catch (error) {
       console.error('Error occurred while updating candidate:', error);
@@ -165,7 +187,10 @@ const ProfileModal = ({ profile, setProfile, candidates, setViewAll }) => {
             {edit ? (
               <Button variant="outlined" sx={{ position: 'relative' }} onClick={saveChanges}>Save</Button>
             ) : (
-              <Button variant="outlined" sx={{ position: 'relative' }} onClick={openEdit}>Edit</Button>
+              <>
+                <Button variant="outlined" sx={{ position: 'relative' }} onClick={openEdit}>Edit</Button>
+                <Button variant="outlined" sx={{ position: 'relative' }} onClick={openEdit}>Delete</Button>
+              </>
             )}
             <Button variant="outlined" sx={{ position: 'relative' }} onClick={goBack}>Back</Button>
           </Box>

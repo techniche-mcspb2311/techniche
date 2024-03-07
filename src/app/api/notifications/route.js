@@ -10,3 +10,14 @@ export async function GET(request) {
 
     return Response.json(cs);
 }
+
+export async function POST(request) {
+    const db = await getDb();
+    const notifications = db.collection('notifications');
+
+    const newNotification = await request.json();
+
+    const result = await notifications.insertOne(newNotification);
+
+    return Response.json(result);
+}
