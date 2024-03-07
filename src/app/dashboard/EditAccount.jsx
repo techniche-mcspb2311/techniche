@@ -98,7 +98,7 @@ const EditAccount = ({ userEmail }) => {
         <div>
           <Button onClick={handleOpen}>
           {userData && userData[0].imageURL ? (
-              <img src={userData[0].imageURL} alt="profile pic" style={{ width: '150px', height: 'auto', borderRadius: '50%' }} />
+              <img src={userData[0].imageURL} alt="profile pic" style={{ maxWidth: '150px', maxHeight: '150px', width: 'auto', height: 'auto', borderRadius: '50%', display: 'block', margin: '0 auto' }} />
             ) : (
               <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png" alt="profile pic" style={{ width: '150px', height: 'auto', borderRadius: '50%' }} />
             )}
@@ -161,7 +161,7 @@ const EditAccount = ({ userEmail }) => {
                   <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png" alt="profile pic" style={{ maxWidth: '100%', height: 'auto' }} />
                 )}
               </div>
-              <label htmlFor="imageUrl">Image URL:</label>
+              <label htmlFor="imageUrl">Profile picture:</label>
               <br />
               <input
                 type="text"
