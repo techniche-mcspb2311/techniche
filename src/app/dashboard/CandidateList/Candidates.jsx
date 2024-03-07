@@ -11,6 +11,7 @@ import Typography from '@mui/material/Typography';
 
 import ProfileModal from './ProfileModal';
 import Sorting from './Sorting';
+import CreateCandidate from './CreateCandidate';
 
 
 const Candidates = () => {
@@ -19,6 +20,7 @@ const Candidates = () => {
   const [profile, setProfile] = useState(null);
   const [candidates, setCandidates] = useState([]);
   const [sortedCandidates, setSortedCandidates] = useState([]);
+  const [newCandidate, setNewCandidate] = useState(false);
 
   useEffect(() => {
     fetch('/api/candidates')
@@ -41,21 +43,10 @@ const Candidates = () => {
     setProfile(candidateId);
   }
 
-  // const addNewCandidate = () => {
-  //   fetch('/api/candidates', {
-  //     method: 'POST',
-  //     headers: {
-  //       'Content-Type': 'application/json',
-  //     },
-  //     body: JSON.stringify({}),
-  //   })
-  //     .then(response => response.json())
-  //     .then(data => {
-  //     })
-  //     .catch(error => {
-  //       console.error('Error adding new candidate:', error);
-  //     });
-  // };
+  const addNewCandidate = () => {
+    setViewAll(false)
+    setNewCandidate(true)
+  }
   
   const modalStyle = {
     position: 'absolute',
@@ -112,6 +103,10 @@ const Candidates = () => {
       {/* Profile Modal ///////////////////////////////////////////////////// */}
       {profile && (
         <ProfileModal profile={profile} setProfile={setProfile} candidates={candidates} sortedCandidates={sortedCandidates} setViewAll={setViewAll}/>
+      )}
+      {/* Add New Candidate /////////////////////////////////////////// */}
+      {newCandidate && (
+        <CreateCandidate setNewCandidate={setNewCandidate}/>
       )}
       {/* Candidate List //////////////////////////////////////////////////// */}
       <Box sx={{ position:'relative', overflowY:'scroll', outline:'black thin dotted', bgcolor:'white', height:'35vh', width:'40vw', borderRadius:'30px', top:'`vh', left:'5vw' }}>
