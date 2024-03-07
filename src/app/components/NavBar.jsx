@@ -74,17 +74,9 @@ function NavBar() {
                                         4px 4px 12px -2.5px rgba(85, 166, 246, 0.15)`,
                         }}
                     >
-                        <Typography
-                            sx={{
-                                flexGrow: 1,
-                                display: 'flex',
-                                alignItems: 'center',
-                                ml: '-18px',
-                                px: 0
-                            }}
-                        >
-                            Techniche
-                        </Typography>
+                        <Box display="flex" justifyContent="center" pt={3} sx={{ mt: -3 }}>
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/Techniche_Logo.jpg" alt="Logo" style={{ width: '125px', height: '41px', borderRadius: '15%' }} />
+                        </Box>
                         <AuthButton session={session} />
                         <MovingNavBar toggleDrawer={toggleDrawer} />
                         <Drawer anchor="right" open={open} onClose={toggleDrawer(false)}>

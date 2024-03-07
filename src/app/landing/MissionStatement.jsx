@@ -6,17 +6,14 @@ import { Typography, Box } from '@mui/material';
 
 export default function MissionStatement() {
     return (
-        <Box textAlign='center' pb={5} bgcolor="primary" borderRadius={4}>
-            <Box display="flex" justifyContent="center" pt={3}>
-                <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/Techniche_Logo.jpg" alt="Logo" style={{ width: '250px', height: '84px', borderRadius: '15%' }} />
-            </Box>
+        <Box textAlign='left' pb={5} bgcolor="primary" borderRadius={4} sx={{ display: 'flex', flexDirection: 'row' }}>
             <Box>
-                <Typography variant='h4' color='primary' gutterBottom sx={{ mt: 2 }}>
+                <Typography variant='h4' color='primary' gutterBottom sx={{ mt: 2}}>
                     Our Mission
                 </Typography>
             </Box>
-            <Box sx={{ p: 1 }}>
-                <Typography variant='body1' color='primary'>
+            <Box sx={{ p: 1, width: '50%' }}>
+                <Typography variant='body1' color='primary' justifyContent="center" sx={{ mt: 2, width: '50%' }}>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                     sed do eiusmod tempor incididunt ut labore et dolore magna
                     aliqua. Ut enim ad minim veniam, quis nostrud exercitation
@@ -27,8 +24,8 @@ export default function MissionStatement() {
                     mollit anim id est laborum.
                 </Typography>
             </Box>
-            <Box display="flex" justifyContent="center" pt={3}>
-                <img src="https://media.istockphoto.com/id/153696622/photo/happy-senior-man-giving-thumb-up.jpg?s=612x612&w=0&k=20&c=b2BI4P4vvgEK9AqxQ_gl7EpWnr1BomTJV24RqtGpaRo=" alt="Logo" style={{ width: '66%', height: '66%' }} />
+            <Box display="flex" justifyContent="left" pt={3} sx={{ mt: 2, width: '50%' }}>
+                <img src="https://cdn-icons-png.freepik.com/256/3206/3206188.png?uid=R138868875&ga=GA1.1.1299048768.1708570662&" alt="Logo" style={{ width: '66%', height: '66%' }} />
             </Box>
         </Box>
     );

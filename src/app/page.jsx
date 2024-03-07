@@ -4,7 +4,7 @@ import { EmployeeFAQ, CandidateFAQ } from "./landing/FAQ.jsx";
 
 export default function Home() {
     return (
-        <Box>
+        <Box bgcolor="primary">
             <MissionStatement />
             <EmployeeFAQ />
             <CandidateFAQ />
