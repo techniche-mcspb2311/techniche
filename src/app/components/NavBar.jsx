@@ -11,7 +11,7 @@ import Drawer from '@mui/material/Drawer';
 import Typography from '@mui/material/Typography';
 import MenuIcon from '@mui/icons-material/Menu';
 import Link from 'next/link';
-import logo from '../../../public/logo.png';
+import logo from '../../../public/yellowlogo.png';
 
 function AuthButton({ session }) {
     if (session) {

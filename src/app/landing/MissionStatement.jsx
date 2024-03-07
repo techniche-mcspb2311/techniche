@@ -7,25 +7,22 @@ import { Typography, Box } from '@mui/material';
 export default function MissionStatement() {
     return (
         <Box textAlign='center' pb={5} bgcolor="primary" borderRadius={4} sx={{ display: 'flex', flexDirection: 'row' }}>
-            <Box>
+            <Box textAlign='center'sx={{ width: '50%' }}>
                 <Typography variant='h4' color='primary' gutterBottom sx={{ mt: 2}}>
                     Our Mission
+                    <Typography textAlign='left' variant='body1' color='primary' justifyContent="center" sx={{ mt: 2}}>
+                    At Techniche, our mission is to revolutionize the recruitment process by empowering both 
+                    candidates and employers through innovative coding challenges. We strive to bridge the gap 
+                    between talent and opportunity by providing a platform where candidates can showcase their 
+                    coding skills and potential employers can identify top technical talent efficiently and accurately. 
+                    With a commitment to integrity, transparency, and fairness, we aim to redefine the hiring landscape, 
+                    making it more inclusive, merit-based, and rewarding for all stakeholders involved. Together, we're 
+                    shaping the future of recruitment, one code challenge at a time.
+                    </Typography>
                 </Typography>
             </Box>
-            <Box textAlign='left' justifyContent='center' sx={{ p: 1, width: '50%' }}>
-                <Typography variant='body1' color='primary' justifyContent="center" sx={{ mt: 2, width: '50%' }}>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                    sed do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                    ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
-                    aute irure dolor in reprehenderit in voluptate velit esse
-                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                    cupidatat non proident, sunt in culpa qui officia deserunt
-                    mollit anim id est laborum.
-                </Typography>
-            </Box>
-            <Box display="flex" justifyContent="left" pt={3} sx={{ mt: 2, width: '50%' }}>
-                <img src="https://cdn-icons-png.freepik.com/256/3206/3206188.png?uid=R138868875&ga=GA1.1.1299048768.1708570662&" alt="Logo" style={{ width: '66%', height: '66%' }} />
+            <Box display="flex" justifyContent="center" pt={3} sx={{ mt: 2, width: '50%' }}>
+                <img src="https://media.istockphoto.com/id/153696622/photo/happy-senior-man-giving-thumb-up.jpg?s=612x612&w=0&k=20&c=b2BI4P4vvgEK9AqxQ_gl7EpWnr1BomTJV24RqtGpaRo=" alt="Logo" style={{ height: '100%' }} />
             </Box>
         </Box>
     );
