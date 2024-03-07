@@ -32,6 +32,7 @@ let appliedSeed = false;
 async function seed(db) {
     if (!appliedSeed) {
 
+        // Seed Candidates
         const candidates = db.collection('candidates');
         const candidatesList = [
             { id: 1, name: "John Doe", score: 80, interviewDate: "2024-02-25", recruiter: null, earliestStartDate: "2024-02-26", notes: "Impressive technical skills" },
@@ -67,6 +68,155 @@ async function seed(db) {
             { id: 31, name: "Joshua Harris", score: 72, interviewDate: "2024-05-25", recruiter: null, earliestStartDate: "2024-05-26", notes: "Strong analytical skills" }
         ];
         await candidates.insertMany(candidatesList);
+        // Seed Notifications
+        const notifications = db.collection('notifications');
+        const notificationList = [
+            {
+                "contents": "Profile updated",
+                "isNew": false,
+                "date": "2023-01-15",
+                "time": "09:30:00"
+            },
+            {
+                "contents": "New candidate in, John Geraldine Fromalius Edmund Carter is in the chatroom",
+                "isNew": false,
+                "date": "2023-02-05",
+                "time": "14:45:00"
+            },
+            {
+                "contents": "Profile updated",
+                "isNew": false,
+                "date": "2023-03-20",
+                "time": "11:00:00"
+            },
+            {
+                "contents": "New candidate in chatroom",
+                "isNew": false,
+                "date": "2023-04-10",
+                "time": "18:00:00"
+            },
+            {
+                "contents": "Profile updated",
+                "isNew": false,
+                "date": "2023-05-02",
+                "time": "08:00:00"
+            },
+            {
+                "contents": "New candidate in chatroom",
+                "isNew": false,
+                "date": "2023-06-17",
+                "time": "16:20:00"
+            },
+            {
+                "contents": "Profile updated",
+                "isNew": false,
+                "date": "2023-07-08",
+                "time": "12:10:00"
+            },
+            {
+                "contents": "New candidate in chatroom",
+                "isNew": false,
+                "date": "2023-08-22",
+                "time": "10:05:00"
+            },
+            {
+                "contents": "Profile updated",
+                "isNew": false,
+                "date": "2023-09-14",
+                "time": "15:30:00"
+            },
+            {
+                "contents": "New candidate in chatroom",
+                "isNew": false,
+                "date": "2023-10-30",
+                "time": "17:40:00"
+            },
+            {
+                "contents": "Profile updated",
+                "isNew": false,
+                "date": "2023-11-25",
+                "time": "13:55:00"
+            },
+            {
+                "contents": "New candidate in chatroom",
+                "isNew": false,
+                "date": "2023-12-11",
+                "time": "09:15:00"
+            },
+            {
+                "contents": "Profile updated",
+                "isNew": false,
+                "date": "2024-01-07",
+                "time": "14:00:00"
+            },
+            {
+                "contents": "New candidate in chatroom",
+                "isNew": false,
+                "date": "2024-02-18",
+                "time": "11:25:00"
+            },
+            {
+                "contents": "Profile updated",
+                "isNew": false,
+                "date": "2024-03-05",
+                "time": "08:45:00"
+            },
+            {
+                "contents": "New candidate in chatroom",
+                "isNew": false,
+                "date": "2024-04-19",
+                "time": "16:50:00"
+            },
+            {
+                "contents": "Profile updated",
+                "isNew": false,
+                "date": "2024-05-30",
+                "time": "13:20:00"
+            },
+            {
+                "contents": "New candidate in chatroom",
+                "isNew": false,
+                "date": "2024-06-08",
+                "time": "10:35:00"
+            },
+            {
+                "contents": "Profile updated",
+                "isNew": false,
+                "date": "2024-07-22",
+                "time": "09:00:00"
+            },
+            {
+                "contents": "New candidate in chatroom",
+                "isNew": false,
+                "date": "2024-08-10",
+                "time": "17:15:00"
+            },
+            {
+                "contents": "AHHHHHHHHHHHHHHHHHHHHH",
+                "isNew": false,
+                "date": "2023-01-15",
+                "time": "09:30:00"
+            },
+            {
+                "contents": "Candidate Ryan Shite has been updated",
+                "isNew": true,
+                "date": "2024-03-07T17:28:52.311Z",
+                "time": "9:28:52 AM"
+            },
+            {
+                "contents": "Mark Johnson has been updated",
+                "isNew": true,
+                "date": "2024-03-07T17:43:30.533Z",
+                "time": "9:43:30 AM"
+            },
+            {
+                "contents": "AHHHHHHHHHHHHHHHHHHHHH",
+                "isNew": false,
+                "date": "2023-01-15",
+                "time": "09:30:00"
+            }
+        ];
+        await notifications.insertMany(notificationList);
 
         const users = db.collection('users');
         let adminExists;
