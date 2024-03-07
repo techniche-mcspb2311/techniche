@@ -176,7 +176,7 @@ const EditAccount = ({ userEmail }) => {
               </Button>
             </Box>
           </Modal>
-          <span style={{ marginBottom: '10px' }}>Logged in as {userEmail}</span>
+          <div>Logged in as {userEmail}</div>
         </div>
       ) : (
         <p>Loading user data...</p>
