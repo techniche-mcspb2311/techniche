@@ -49,7 +49,6 @@ function RoomModal({ room, onJoinRoomClick, onDeleteClick, onClose }) {
                     left: '5vw',
                     position: 'relative',
                     textAlign: 'center',
-                    backgroundColor: '#f0f0f0',
                 }}
                 >
                 {room.passcode && <p>Passcode: {room.passcode}</p>}

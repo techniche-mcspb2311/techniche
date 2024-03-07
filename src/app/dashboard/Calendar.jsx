@@ -9,6 +9,7 @@ import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Modal from '@mui/material/Modal';
 import CalendarTwo from './Calendar-2';
+import { amber, deepOrange, grey } from '@mui/material/colors';
 
 
 const style = {
@@ -24,7 +25,7 @@ const style = {
 };
 
 const listStyle = {
-  backgroundColor: 'white',
+  backgroundColor: '#21282D',
   padding: '5px 10px',
   borderRadius: '20px',
   margin: '10px 0',

@@ -109,7 +109,7 @@ const Candidates = () => {
         <CreateCandidate setNewCandidate={setNewCandidate}/>
       )}
       {/* Candidate List //////////////////////////////////////////////////// */}
-      <Box sx={{ position:'relative', overflowY:'scroll', outline:'black thin dotted', bgcolor:'white', height:'35vh', width:'40vw', borderRadius:'30px', top:'`vh', left:'5vw' }}>
+      <Box sx={{ position:'relative', overflowY:'scroll', outline:'black thin dotted', height:'35vh', width:'40vw', borderRadius:'30px', top:'`vh', left:'5vw' }}>
         {sortedCandidates && sortedCandidates.map((candidate, index) => {
           if(candidate.recruiter === 'theUser') {
             return (
