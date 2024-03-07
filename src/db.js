@@ -68,6 +68,7 @@ async function seed(db) {
 import { MongoClient } from "mongodb";
 
 const uri = process.env.MONGODB_URI;
+console.log(uri);
 const options = {
   useUnifiedTopology: true,
   useNewUrlParser: true,
