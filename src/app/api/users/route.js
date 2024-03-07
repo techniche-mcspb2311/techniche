@@ -36,7 +36,6 @@ export async function PATCH(request) {
       updateOperation.imageURL = requestBody.imageURL;
     }
 
-    // Update the user data in the database
     const result = await collection.updateOne(filter, { $set: updateOperation });
 
     if (result.modifiedCount === 1) {
