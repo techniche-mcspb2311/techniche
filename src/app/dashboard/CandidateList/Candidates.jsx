@@ -85,13 +85,13 @@ const Candidates = () => {
             {sortedCandidates && sortedCandidates.map((candidate, index) => {
               if (candidate.recruiter === 'theUser') {
                 return (
-                  <ListItemButton key={index} onClick={() => candidateProfile(candidate.id)} sx={{ bgcolor: '#6ccc81', outline: 'thin black dotted', borderRadius: '25px' }}>
-                    <ListItemText primary={candidate.name} sx={{ color: 'white' }} />
+                  <ListItemButton key={index} onClick={() => candidateProfile(candidate.id)} sx={{ bgcolor: '#ffd54f', outline: 'thin black dotted', borderRadius: '25px' }}>
+                    <ListItemText primary={candidate.name} sx={{ color: 'black' }} />
                   </ListItemButton>
                 );
               } else {
                 return (
-                  <ListItemButton key={index} onClick={() => candidateProfile(candidate.id)} sx={{ bgcolor: '', outline: 'thin black dotted', borderRadius: '25px' }}>
+                  <ListItemButton key={index} onClick={() => candidateProfile(candidate.id)} sx={{ bgcolor: '#21282D', outline: 'thin black dotted', borderRadius: '25px' }}>
                     <ListItemText primary={candidate.name} sx={{ color: '#5d6f9e' }} />
                   </ListItemButton>
                 );
@@ -109,12 +109,12 @@ const Candidates = () => {
         <CreateCandidate setNewCandidate={setNewCandidate}/>
       )}
       {/* Candidate List //////////////////////////////////////////////////// */}
-      <Box sx={{ position:'relative', overflowY:'scroll', outline:'black thin dotted', height:'35vh', width:'40vw', borderRadius:'30px', top:'`vh', left:'5vw' }}>
+      <Box sx={{ position:'relative', overflowY:'scroll', height:'35vh', width:'40vw', borderRadius:'30px', top:'`vh', left:'5vw' }}>
         {sortedCandidates && sortedCandidates.map((candidate, index) => {
           if(candidate.recruiter === 'theUser') {
             return (
-              <ListItemButton key={index} onClick={() => candidateProfile(candidate.id)} sx={{ position: 'relative', marginBottom: '.1vh', bgcolor: '#6ccc81', outline: 'thin white solid', borderRadius: '25px' }}>
-                <ListItemText primary={candidate.name} sx={{ color:'white' }}/>
+              <ListItemButton key={index} onClick={() => candidateProfile(candidate.id)} sx={{ position: 'relative', marginBottom: '.1vh', bgcolor: '#21282D', outline: 'thin white solid', borderRadius: '25px' }}>
+                <ListItemText primary={candidate.name} sx={{ color:'#ffd54f' }}/>
               </ListItemButton>
             );
           }

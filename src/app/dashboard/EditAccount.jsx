@@ -129,6 +129,7 @@ const EditAccount = ({ userEmail }) => {
                   value={jobTitle}
                   onChange={(e) => setJobTitle(e.target.value)}
                   placeholder="Job Title"
+                  style={{ color: 'black' }}
                 />
               </div>
               <div style={{ marginBottom: 10 }}>
@@ -140,6 +141,7 @@ const EditAccount = ({ userEmail }) => {
                   value={city}
                   onChange={(e) => setCity(e.target.value)}
                   placeholder="City"
+                  style={{ color: 'black' }}
                 />
               </div>
               <div style={{ marginBottom: 10 }}>
@@ -151,6 +153,7 @@ const EditAccount = ({ userEmail }) => {
                   value={phoneNumber}
                   onChange={(e) => setPhoneNumber(e.target.value)}
                   placeholder="Phone Number"
+                  style={{ color: 'black' }}
                 />
               </div>
               <div style={{ width: '100%', textAlign: 'center', marginBottom: 10 }}>
@@ -170,6 +173,7 @@ const EditAccount = ({ userEmail }) => {
                 value={imageUrl}
                 onChange={(e) => setImageUrl(e.target.value)}
                 placeholder="Image URL"
+                style={{ color: 'black' }}
               />
               <br />
               <Button variant="contained" color="primary" onClick={handleSave}>
