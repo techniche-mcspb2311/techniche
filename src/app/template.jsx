@@ -8,7 +8,6 @@ import darkModeTheme from "./theme/theme";
 import { useColorMode } from './theme/ColorMode';
 
 export default function Template({ children }) {
-    const { toggleColorMode, theme } = useColorMode();
 
     return (
         <Box>
