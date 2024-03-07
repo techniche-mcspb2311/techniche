@@ -1,4 +1,5 @@
 
+import { signOut } from 'next-auth/react';
 import React, { useState, useEffect } from 'react';
 import Button from '@mui/material/Button';
 import Modal from '@mui/material/Modal';
@@ -177,6 +178,7 @@ const EditAccount = ({ userEmail }) => {
             </Box>
           </Modal>
           <div>Logged in as {userEmail}</div>
+          <Button onClick={() => signOut()}>Logout</Button>
         </div>
       ) : (
         <p>Loading user data...</p>
