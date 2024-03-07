@@ -9,6 +9,7 @@ import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Modal from '@mui/material/Modal';
 import CalendarTwo from './Calendar-2';
+import { amber, deepOrange, grey } from '@mui/material/colors';
 
 
 const style = {
@@ -24,7 +25,7 @@ const style = {
 };
 
 const listStyle = {
-  backgroundColor: 'white',
+  backgroundColor: '#21282D',
   padding: '5px 10px',
   borderRadius: '20px',
   margin: '10px 0',
@@ -94,7 +95,7 @@ export default function BasicTabs() {
   return (
     <div>
       <h1 style={{ textAlign: 'center', fontSize: '30px', backgroundColor: '#21282D', color: 'white', marginTop: '5vh', }}>Calendar:</h1>
-      <Box className="calendarBox" sx={{ width: '100%', height: '30vh', backgroundColor: '#C2BBAB'}}>
+      <Box className="calendarBox" sx={{ width: '100%', height: '30vh'}}>
         <Box sx={{ borderBottom: 1, borderColor: 'divider', backgroundColor: '#2A343B'}}>
           <Tabs value={value} onChange={handleChange} aria-label="basic tabs example" >
             <Tab sx={{ color: 'white'}} label="Sunday" {...a11yProps(0)} />

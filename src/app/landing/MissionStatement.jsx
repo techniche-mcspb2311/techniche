@@ -6,13 +6,13 @@ import { Typography, Box } from '@mui/material';
 
 export default function MissionStatement() {
     return (
-        <Box textAlign='left' pb={5} bgcolor="primary" borderRadius={4} sx={{ display: 'flex', flexDirection: 'row' }}>
+        <Box textAlign='center' pb={5} bgcolor="primary" borderRadius={4} sx={{ display: 'flex', flexDirection: 'row' }}>
             <Box>
                 <Typography variant='h4' color='primary' gutterBottom sx={{ mt: 2}}>
                     Our Mission
                 </Typography>
             </Box>
-            <Box sx={{ p: 1, width: '50%' }}>
+            <Box textAlign='left' justifyContent='center' sx={{ p: 1, width: '50%' }}>
                 <Typography variant='body1' color='primary' justifyContent="center" sx={{ mt: 2, width: '50%' }}>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                     sed do eiusmod tempor incididunt ut labore et dolore magna
