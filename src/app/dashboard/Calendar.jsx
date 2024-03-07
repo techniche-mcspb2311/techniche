@@ -44,7 +44,8 @@ function CustomTabPanel(props) {
     >
       {value === index && (
         <Box sx={{ p: 3 }}>
-          <Typography>{children}</Typography>
+          {/* <Typography>{children}</Typography> */}
+          {children}
         </Box>
       )}
     </div>
@@ -108,33 +109,33 @@ export default function BasicTabs() {
         </Box>
 
         <CustomTabPanel value={value} index={0}>
-          <div style={listStyle}>{calendarData && calendarData[0] && calendarData[0].title}</div>
+          <div style={listStyle}><Typography>{calendarData && calendarData[0] && calendarData[0].title}</Typography></div>
         </CustomTabPanel>
         <CustomTabPanel value={value} index={1}>
-          <div style={listStyle}> Work with Athan </div>
-          <div style={listStyle}> Meeting with Kyler </div>
-          <div style={listStyle}> Interview with Heather</div>
+          <div style={listStyle}><Typography> Work with Athan </Typography></div>
+          <div style={listStyle}><Typography> Meeting with Kyler </Typography></div>
+          <div style={listStyle}><Typography> Interview with Heather</Typography></div>
         </CustomTabPanel>
         <CustomTabPanel value={value} index={2}>
-          <div style={listStyle}> Where is Dillion??? </div>
-          <div style={listStyle}> Call Dillion </div>
-          <div style={listStyle}> Find Dillion </div>
+          <div style={listStyle}><Typography> Where is Dillion??? </Typography></div>
+          <div style={listStyle}><Typography> Call Dillion </Typography></div>
+          <div style={listStyle}><Typography> Find Dillion </Typography></div>
         </CustomTabPanel>
         <CustomTabPanel value={value} index={3}>
-          <div style={listStyle}> Lunch with the team </div>
-          <div style={listStyle}> Phone screening with possible candidate </div>
-          <div style={listStyle}> Call mom </div>
+          <div style={listStyle}><Typography> Lunch with the team </Typography></div>
+          <div style={listStyle}><Typography> Phone screening with possible candidate </Typography></div>
+          <div style={listStyle}><Typography> Call mom </Typography></div>
         </CustomTabPanel>
         <CustomTabPanel value={value} index={4}>
-          <div style={listStyle}> networking event with Heather</div>
-          <div style={listStyle}> interview possible candidate</div>
+          <div style={listStyle}><Typography> networking event with Heather</Typography></div>
+          <div style={listStyle}><Typography> interview possible candidate</Typography></div>
         </CustomTabPanel>
         <CustomTabPanel value={value} index={5}>
-          <div style={listStyle}> Work with Adrian</div>
-          <div style={listStyle}> meeting with Adrian and Stephanie</div>
+          <div style={listStyle}><Typography> Work with Adrian</Typography></div>
+          <div style={listStyle}><Typography> meeting with Adrian and Stephanie</Typography></div>
         </CustomTabPanel>
         <CustomTabPanel value={value} index={6}>
-          <div style={listStyle}> free day </div>
+          <div style={listStyle}><Typography> free day </Typography></div>
         </CustomTabPanel>
         
         <button style={{ backgroundColor: 'grey', color: 'white', borderRadius: '5px', padding: '1px 5px', marginLeft: '25px'}} 
