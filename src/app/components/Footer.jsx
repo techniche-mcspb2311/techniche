@@ -24,7 +24,7 @@ export default function Footer() {
                     <Link href="https://www.linkedin.com/in/dylan-w-gordon/" target="_blank" rel="noopener noreferrer" color="inherit" underline="none" mr={2}>
                         <LinkedInIcon />
                     </Link>
-                    <Link href="https://www.linkedin.com/in/dylan-w-gordon/" target="_blank" rel="noopener noreferrer" color="inherit" underline="none" mr={2}>
+                    <Link href="https://media.licdn.com/dms/image/D5603AQFMT0Q9UtFn6w/profile-displayphoto-shrink_800_800/0/1686541619902?e=2147483647&v=beta&t=_zqxuLa_n5K36gn22lP3V4iQy2Bfnb_TI4hPHW0Gj4o" target="_blank" rel="noopener noreferrer" color="inherit" underline="none" mr={2}>
                         <TwitterIcon />
                     </Link>
                 </Box>

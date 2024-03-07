@@ -112,7 +112,8 @@ export default function BasicTabs() {
         </Box>
 
         <CustomTabPanel value={value} index={0}>
-          <div style={listStyle}><Typography>{calendarData && calendarData[0] && calendarData[0].title}</Typography></div>
+          <div style={listStyle}><Typography> Who is Gordy? Find Gordy</Typography></div>
+          <div style={listStyle}><Typography> Go tank top shopping with Gordy</Typography></div>
         </CustomTabPanel>
         <CustomTabPanel value={value} index={1}>
           <div style={listStyle}><Typography> Work with Athan </Typography></div>
