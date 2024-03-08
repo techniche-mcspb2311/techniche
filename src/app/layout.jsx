@@ -22,11 +22,11 @@ export default async function RootLayout({ children }) {
     return (
         <html lang="en">
             <body className={inter.className}>
-                <AppRouterCacheProvider>
-                    <SessionProvider session={session}>
-                        {children}
-                    </SessionProvider>
-                </AppRouterCacheProvider>
+                    <AppRouterCacheProvider>
+                        <SessionProvider session={session}>
+                            {children}
+                        </SessionProvider>
+                    </AppRouterCacheProvider>
             </body>
         </html>
     );

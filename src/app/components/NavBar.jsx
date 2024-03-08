@@ -11,12 +11,13 @@ import Drawer from '@mui/material/Drawer';
 import Typography from '@mui/material/Typography';
 import MenuIcon from '@mui/icons-material/Menu';
 import Link from 'next/link';
+import logo from '../../../public/yellowlogo.png';
 
 function AuthButton({ session }) {
     if (session) {
         return (
             <Link href="/dashboard" passHref>
-                <Button variant="contained">Dashboard</Button>
+                <Button color="primary" variant="contained">Dashboard</Button>
             </Link>
         );
     } else {
@@ -64,7 +65,7 @@ function NavBar() {
                             justifyContent: 'space-between',
                             flexShrink: 0,
                             borderRadius: '999px',
-                            bgcolor: 'rgba(255, 255, 255, 0.4)',
+                            bgcolor: 'primary',
                             backgropFilter: 'blur(24px)',
                             maxHeight: 40,
                             border: '1px solid',
@@ -74,21 +75,13 @@ function NavBar() {
                                         4px 4px 12px -2.5px rgba(85, 166, 246, 0.15)`,
                         }}
                     >
-                        <Typography
-                            sx={{
-                                flexGrow: 1,
-                                display: 'flex',
-                                alignItems: 'center',
-                                ml: '-18px',
-                                px: 0
-                            }}
-                        >
-                            Techniche
-                        </Typography>
+                        <Box display="flex" alignItems="flex-start" pr={5}>
+                            <img src={logo.src} alt="Logo" style={{ width: '200px', borderRadius: '15%' }} />
+                        </Box>
                         <AuthButton session={session} />
                         <MovingNavBar toggleDrawer={toggleDrawer} />
                         <Drawer anchor="right" open={open} onClose={toggleDrawer(false)}>
-                            <Box sx={{ minWidth: '60dvw', p: 2, backgroundColor: 'background.paper', flexGrow: 1 }}>
+                            <Box sx={{ minWidth: '60dvw', p: 2, backgroundColor: 'primary', flexGrow: 1 }}>
                                 <Box
                                     sx={{
                                         display: 'flex',

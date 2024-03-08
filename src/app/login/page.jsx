@@ -4,7 +4,7 @@ import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
 
 export default async function Login() {
-    const csrfToken = await fetch(`http://localhost:3000/api/auth/csrf`,{
+    const csrfToken = await fetch(process.env.HOST + '/api/auth/csrf', {
         headers: headers(),
     })
           .then( res => res.json() )
