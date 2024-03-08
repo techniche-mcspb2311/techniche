@@ -30,9 +30,10 @@
 let appliedSeed = false;
 
 async function seed(db) {
-    if (!appliedSeed) {
-
-        // Seed Candidates
+    // This is for seeding Candidates and Notifications ///////////////////////////////////////////////////////
+    const seedingFlag = await db.collection('seeding').findOne({ name: 'candidatesAndNotifications' });
+    
+    if (!seedingFlag) {
         const candidates = db.collection('candidates');
         const candidatesList = [
             { id: 1, name: "John Doe", score: 80, interviewDate: "2024-02-25", recruiter: null, earliestStartDate: "2024-02-26", notes: "Impressive technical skills" },
@@ -218,6 +219,11 @@ async function seed(db) {
         ];
         await notifications.insertMany(notificationList);
 
+        await db.collection('seeding').insertOne({ name: 'candidatesAndNotifications' });
+    }
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    if (!appliedSeed) {
         const users = db.collection('users');
         let adminExists;
         if (process.env.ADMIN_EMAIL) {
