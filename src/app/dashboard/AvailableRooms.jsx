@@ -9,8 +9,6 @@ import TextField from '@mui/material/TextField';
 import ButtonGroup from '@mui/material/ButtonGroup';
 import { styled } from '@mui/material/styles';
 import Typography from '@mui/material/Typography';
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { set } from 'zod';
 
 const RoomNumberItem = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
@@ -30,15 +28,15 @@ function RoomModal({ room, onJoinRoomClick, onDeleteClick, onClose }) {
             <Box
                 textAlign={'center'}
                 border='2px solid grey'
-                borderRadius={4}
+                borderRadius={2}
                 p={2}
                 mb={2}
                 >
-                <Typography variant='h6'>{`Room ${room._id}`}</Typography>
+                <Typography variant='h8'>{`Selected Coding Challenge Room`}</Typography>
             </Box>
             <Box
                 height={80}
-                width={200}
+                width={300}
                 my={4}
                 display="flexwrap"
                 fontSize={10}
@@ -47,13 +45,13 @@ function RoomModal({ room, onJoinRoomClick, onDeleteClick, onClose }) {
                 p={2}
                 sx={{
                     border: '2px solid grey',
-                    left: '5vw',
                     position: 'relative',
                     textAlign: 'center',
                     backgroundColor: '#f0f0f0',
+                    borderRadius: 2,
                 }}
                 >
-                {room.passcode && <p>Passcode: {room.passcode}</p>}
+                {room._id && <p>Link: localhost:3000/challenge/{room._id}</p>}
             </Box>
             <ButtonGroup variant="contained" orientation="vertical" size="large" sx={{ position: "relative", left:"6.5vw" }}>
                 <Button onClick={() => onJoinRoomClick(room)}>Join Room</Button>
@@ -67,7 +65,6 @@ function RoomModal({ room, onJoinRoomClick, onDeleteClick, onClose }) {
 export default function AvailableRooms() {
     const [rooms, setRooms] = useState(null);
     const [selectedRoom, setSelectedRoom] = useState(null);
-    const [passcode, setPasscode] = useState('');
     // const [isModalOpen, setIsModalOpen] = useState(false);
     const { data: session } = useSession({ required: true });
 
@@ -87,7 +84,7 @@ export default function AvailableRooms() {
 
     const handleJoinRoom = (room) => {
         if (room) {
-            window.open(`/challenge/${room.id}`, '_blank');
+            window.open(`/challenge/${room._id}`, '_blank');
         }
     };
 
@@ -119,10 +116,9 @@ export default function AvailableRooms() {
             headers: {
                 "Content-Type": 'application/json'
             },
-            body: JSON.stringify({ passcode, recruiterId: session.user._id }),
+            body: JSON.stringify({ recruiterId: session.user._id }),
         });
         const newChallengeId = res.json();
-        setPasscode('');
         await getRooms();
     };
 
@@ -136,15 +132,12 @@ export default function AvailableRooms() {
                 top: '50%',
             }}
             >
-            <Box borderBottom="2px solid grey" pb={2} mb={2} mt={2}>
-                <Typography variant="h5" fontWeight='bold'>
+            <Box border="2px solid grey" p={2} mb={2} mt={2} borderRadius={2}>
+                <Typography variant="h6" fontWeight='bold'>
                     Coding Challenge Rooms
                 </Typography>
             </Box>
           <Box>
-            <TextField label="passcode" onChange={(e) => {
-                setPasscode(e.target.value);
-            }} value={passcode} />
             <Button onClick={handleCreateRoom}>Add Room</Button>
           </Box>
             <div className="room-list">
