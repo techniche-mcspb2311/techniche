@@ -1,5 +1,52 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+## Landing Page
+![image](https://github.com/techniche-mcspb2311/techniche/assets/146573725/745e91d0-fdd1-4052-837e-0df0938c74c5)
+
+## User Dashboard
+![image](https://github.com/techniche-mcspb2311/techniche/assets/146573725/10fb6de3-2c2f-4e7d-a1e4-5bf95d40b6b0)
+
+## Candidates Modal
+![image](https://github.com/techniche-mcspb2311/techniche/assets/146573725/4db77737-c0dc-4bf6-9565-0a472b14eafe)
+
+## Challenge Room Options
+![image](https://github.com/techniche-mcspb2311/techniche/assets/146573725/ca5183f9-0c3e-44de-8e40-a6ad0df4e893)
+
+## Challenge Room Editor
+![image](https://github.com/techniche-mcspb2311/techniche/assets/146573725/0203169a-6d21-4fe3-a16d-548683098b41)
+
+
+# Welcome to Techniche: Empowering Recruiters with Technical Interviews!
+
+Techniche is a revolutionary platform designed to streamline coding interviews for recruiters and hiring managers. Our comprehensive suite of features includes a coding editor, a customizable dashboard, a captivating landing page, and secure sign-in authentication powered by NextAuth.
+
+## Features:
+- **Coding Editor:** Our intuitive coding editor provides a seamless environment for conducting coding interviews. With syntax highlighting, code completion, and real-time collaboration features, recruiters can assess candidates' coding skills with ease.
+
+- **Customizable Dashboard:** Tailored to recruiters' needs, our dashboard offers insightful analytics, candidate profiles, and interview scheduling tools. Stay organized and make informed decisions throughout the recruitment process.
+
+- **Engaging Landing Page:** Make a lasting impression with our captivating landing page, designed to showcase your company's brand and values. With stunning visuals and compelling content, attract top talent and create a memorable candidate experience.
+
+- **Secure Authentication:** NextAuth integration ensures robust authentication mechanisms, safeguarding sensitive candidate and recruiter data. Rest assured that your information is protected with industry-leading security protocols.
+
+## Technology Stack:
+- **Database:** MongoDB, housed within a Docker container, offers scalability and flexibility for storing candidate information securely.
+- **Frontend Framework:** Next.js and React provide a powerful combination for building dynamic and interactive user interfaces.
+- **UI Design:** Material UI enhances the user experience with sleek, responsive, and customizable components.
+- **Authentication:** NextAuth simplifies and secures the authentication process, allowing seamless sign-in for recruiters and candidates alike.
+
+## How Techniche Works:
+1. Recruiters sign in securely using NextAuth authentication.
+2. They access the customizable dashboard to manage interviews, review candidate profiles, and analyze performance metrics.
+3. Recruiters conduct coding interviews using the integrated coding editor, assessing candidates' technical skills in real time.
+4. Candidate data is securely stored and managed in MongoDB, ensuring compliance with data privacy regulations.
+5. The engaging landing page attracts top talent and fosters a positive candidate experience, reflecting your company's culture and values.
+
+With Techniche, recruiters can optimize the technical interview process, identify top talent efficiently, and build high-performing teams that drive innovation and success.
+
+Experience the future of technical recruiting with CodeMaster today!
+
+
 ## Getting Started with Next.js
 
 First, run the development server:
