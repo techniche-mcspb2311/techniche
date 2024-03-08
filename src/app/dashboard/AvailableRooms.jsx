@@ -5,10 +5,10 @@ import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
-import TextField from '@mui/material/TextField';
 import ButtonGroup from '@mui/material/ButtonGroup';
 import { styled } from '@mui/material/styles';
 import Typography from '@mui/material/Typography';
+import { grey } from '@mui/material/colors';
 
 const RoomNumberItem = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
@@ -32,7 +32,7 @@ function RoomModal({ room, onJoinRoomClick, onDeleteClick, onClose }) {
                 p={2}
                 mb={2}
                 >
-                <Typography variant='h8'>{`Selected Coding Challenge Room`}</Typography>
+                <Typography variant='h8' color={grey[900]}>{`Selected Coding Challenge Room`}</Typography>
             </Box>
             <Box
                 height={80}
@@ -49,6 +49,7 @@ function RoomModal({ room, onJoinRoomClick, onDeleteClick, onClose }) {
                     textAlign: 'center',
                     backgroundColor: '#f0f0f0',
                     borderRadius: 2,
+                    color: grey[900],
                 }}
                 >
                 {room._id && <p>Link: localhost:3000/challenge/{room._id}</p>}
@@ -133,7 +134,7 @@ export default function AvailableRooms() {
             }}
             >
             <Box border="2px solid grey" p={2} mb={2} mt={2} borderRadius={2}>
-                <Typography variant="h6" fontWeight='bold'>
+                <Typography variant="h6" fontWeight='bold' color={grey[900]}>
                     Coding Challenge Rooms
                 </Typography>
             </Box>

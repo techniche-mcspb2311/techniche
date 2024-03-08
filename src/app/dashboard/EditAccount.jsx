@@ -1,4 +1,5 @@
 
+import { signOut } from 'next-auth/react';
 import React, { useState, useEffect } from 'react';
 import Button from '@mui/material/Button';
 import Modal from '@mui/material/Modal';
@@ -98,7 +99,7 @@ const EditAccount = ({ userEmail }) => {
         <div>
           <Button onClick={handleOpen}>
           {userData && userData[0].imageURL ? (
-              <img src={userData[0].imageURL} alt="profile pic" style={{ width: '150px', height: 'auto', borderRadius: '50%' }} />
+              <img src={userData[0].imageURL} alt="profile pic" style={{ maxWidth: '150px', maxHeight: '150px', width: 'auto', height: 'auto', borderRadius: '50%', display: 'block', margin: '0 auto' }} />
             ) : (
               <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png" alt="profile pic" style={{ width: '150px', height: 'auto', borderRadius: '50%' }} />
             )}
@@ -118,8 +119,8 @@ const EditAccount = ({ userEmail }) => {
                 overflowY: 'auto',
               }}
             >
-              <h2 style={{ fontSize: '24px', marginBottom: '20px' }}>Edit Account</h2>
-              <div style={{ marginBottom: 10 }}>
+              <h2 style={{ fontSize: '24px', marginBottom: '20px', color: '#ffd54f' }}>Edit Account</h2>
+              <div style={{ marginBottom: 10, color: '#ffd54f' }}>
                 <label htmlFor="jobTitle">Job Title:</label>
                 <br />
                 <input
@@ -128,9 +129,10 @@ const EditAccount = ({ userEmail }) => {
                   value={jobTitle}
                   onChange={(e) => setJobTitle(e.target.value)}
                   placeholder="Job Title"
+                  style={{ color: 'black' }}
                 />
               </div>
-              <div style={{ marginBottom: 10 }}>
+              <div style={{ marginBottom: 10, color: '#ffd54f' }}>
                 <label htmlFor="city">City:</label>
                 <br />
                 <input
@@ -139,9 +141,10 @@ const EditAccount = ({ userEmail }) => {
                   value={city}
                   onChange={(e) => setCity(e.target.value)}
                   placeholder="City"
+                  style={{ color: 'black' }}
                 />
               </div>
-              <div style={{ marginBottom: 10 }}>
+              <div style={{ marginBottom: 10, color: '#ffd54f' }}>
                 <label htmlFor="phoneNumber">Phone Number:</label>
                 <br />
                 <input
@@ -150,9 +153,10 @@ const EditAccount = ({ userEmail }) => {
                   value={phoneNumber}
                   onChange={(e) => setPhoneNumber(e.target.value)}
                   placeholder="Phone Number"
+                  style={{ color: 'black' }}
                 />
               </div>
-              <div style={{ width: '100%', textAlign: 'center', marginBottom: 10 }}>
+              <div style={{ width: '100%', textAlign: 'center', marginBottom: 10, color: '#ffd54f' }}>
                 <label htmlFor="imageUrl">Profile Picture:</label>
                 <br />
                 {imageUrl ? (
@@ -161,7 +165,7 @@ const EditAccount = ({ userEmail }) => {
                   <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png" alt="profile pic" style={{ maxWidth: '100%', height: 'auto' }} />
                 )}
               </div>
-              <label htmlFor="imageUrl">Image URL:</label>
+              <label style={{ color: '#ffd54f' }} htmlFor="imageUrl">Profile picture:</label>
               <br />
               <input
                 type="text"
@@ -169,6 +173,7 @@ const EditAccount = ({ userEmail }) => {
                 value={imageUrl}
                 onChange={(e) => setImageUrl(e.target.value)}
                 placeholder="Image URL"
+                style={{ color: 'black' }}
               />
               <br />
               <Button variant="contained" color="primary" onClick={handleSave}>
@@ -176,7 +181,8 @@ const EditAccount = ({ userEmail }) => {
               </Button>
             </Box>
           </Modal>
-          <span style={{ marginBottom: '10px' }}>Logged in as {userEmail}</span>
+          <div>Logged in as {userEmail}</div>
+          <Button onClick={() => signOut()}>Logout</Button>
         </div>
       ) : (
         <p>Loading user data...</p>

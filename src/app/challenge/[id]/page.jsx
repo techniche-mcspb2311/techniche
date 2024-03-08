@@ -19,7 +19,7 @@ export default function Challenge({ params: { id: challengeId }}) {
         const submission = editorRef.current.getValue();
 
         async function actuallySubmit() {
-            await fetch('http://localhost:3000/api/challenges/submit', {
+            await fetch('/api/challenges/submit', {
                 method: 'POST',
                 headers: {
                     "Content-Type": 'application/json'
