@@ -16,7 +16,7 @@ export default function MissionStatement() {
                     between talent and opportunity by providing a platform where candidates can showcase their 
                     coding skills and potential employers can identify top technical talent efficiently and accurately. 
                     With a commitment to integrity, transparency, and fairness, we aim to redefine the hiring landscape, 
-                    making it more inclusive, merit-based, and rewarding for all stakeholders involved. Together, we're 
+                    making it more inclusive, merit-based, and rewarding for all stakeholders involved. Together, we&apos;re 
                     shaping the future of recruitment, one code challenge at a time.
                     </Typography>
                 </Typography>
